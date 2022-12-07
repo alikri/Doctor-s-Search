@@ -4,8 +4,6 @@
 	display: flex;
 
 	.input-search {
-		padding-left: 30px;
-		margin-left: 20px;
 		font-family: 'Inter', sans-serif;
 		width: 180px;
 		height: 40px;
@@ -23,22 +21,27 @@
 	
 	}
 
+
 	.home-page-zip {
-		width: 110px;
-		
+		width: 160px;
+		padding-left: 10px;
+		text-align: center;
 	
 	}
 
 	.home-page-search {
-		width: 400px;
+		width: 500px;
+		margin-left: 20px;
+		padding-left: 30px;
 	}
+
 
 	.search-btn {
 		margin-left: 20px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 180px;
+		width: 160px;
 		height: 40px;
 		border-radius: 50px;
 		border: 1px solid #014F86;
