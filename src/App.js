@@ -13,3 +13,9 @@ function App() {
 }
 
 export default App;
+
+
+// font-family: 'Barlow', sans-serif;
+// font-family: 'Inter', sans-serif;
+// font-family: 'Source Sans Pro', sans-serif;
+// font-family: 'Ultra', serif;

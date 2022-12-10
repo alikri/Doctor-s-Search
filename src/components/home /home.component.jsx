@@ -1,6 +1,7 @@
 import "./home.styles.scss";
 import image from "../assets/home-background.png";
 import SearchBar from "../search bar/searchBar.component";
+import FilterNav from "../filter-nav/filter-nav.component";
 
 const Home = () => {
 
@@ -10,7 +11,8 @@ const Home = () => {
 	}
 	return (
 		<div className="home-container" style={myStyles}>
-			<SearchBar />
+				<FilterNav />
+				<SearchBar />
 		</div>
 	)
 }

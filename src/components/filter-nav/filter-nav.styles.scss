@@ -1,0 +1,15 @@
+.filter-container {
+	margin-top: 50px;
+	position: relative;
+
+	h2 {
+		font-weight: 700;
+		color: #023050;
+		font-size: 18px;
+
+		&:hover {
+			color: #5c85bf;
+			cursor: default;
+		}
+	}
+}
