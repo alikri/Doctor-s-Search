@@ -1,27 +1,65 @@
 import "./hospital-main-page.styles.scss";
-import generateData from "../../hospitals-data";
 import { useState, useEffect} from "react";
-
+import crossClose from "../assets/cross-close.svg"
+import facilities from "../../hospitals";
 const HospitalFilter = () => {
-
 	const [hospitals, setHospitals] = useState([]);
+	const [hospitalSearchField, setHospitalSearchFiel] = useState("");
+	const [filteredHospital, setFilteredHospital] = useState(hospitals);
+	const [chosenHospital, setChosenHospital] = useState(null);
 
 	useEffect(() => {
-		let generatedHospitals = generateData("Hospital",20);
+		let generatedHospitals = facilities;
 		setHospitals(generatedHospitals);
-	}, [])
-	
-	
-	const hospitalList = hospitals.map(hospital => <li key={hospital.id}>{hospital.name}</li>) 
+	}, []);
 
+	useEffect(() => {
+		const newFilterHospitals = hospitals.filter(
+			(hospital) => {
+				return hospital.name.toLocaleLowerCase().includes(hospitalSearchField);
+			})
+		setFilteredHospital(newFilterHospitals);
+	}, [hospitals, hospitalSearchField]);
+	
+
+	const inputChange = (e) => {
+		let searchFieldString = e.target.value.toLocaleLowerCase();
+		setHospitalSearchFiel(searchFieldString);
+	}
+
+	const handleSelection = (e) => {
+		if (e.target.tagName !== "LI") return;
+		let hospital = e.target.innerHTML;
+		if (chosenHospital == null) {
+			setChosenHospital([hospital]);
+		} else if (!chosenHospital.includes(hospital)) {
+			setChosenHospital(prevValue => [...prevValue, hospital])
+		}
+	}
+
+	const removeChosen = (e) => {
+		let hospitalToRemove = e.target.offsetParent.innerText;
+		if (chosenHospital.includes(hospitalToRemove)) {
+			let clearedHospitalList = chosenHospital.filter(facility => facility !== hospitalToRemove)
+			setChosenHospital(clearedHospitalList);
+		}
+
+	}
+	const hospitalList = filteredHospital.map(hospital => <li key={hospital.id}>{hospital.name}</li>) 
+
+	const selectedFacility = chosenHospital && chosenHospital.map(facility => <div key={facility} className="selected-hospital">{facility}
+		<img onClick={removeChosen} className="cross-close" src={`${crossClose}`} alt="" />
+	</div>)
+
+	
 	return (
 		<div className="hospital-search-container">
 			<div className="hospital-input-container">
-				<input className="filter-hospital" type="search" />
-				<input className="filter-hospital-btn" type="submit" />
-				<span className="selected hospital">Chosen Hospital</span>
+				<input onChange={inputChange} className="filter-hospital" type="search" />
+				{/* <input className="filter-hospital-btn" type="submit" /> */}
+				{selectedFacility}
 			</div>
-			<ul>
+			<ul onClick={handleSelection}>
 				{hospitalList}
 			</ul>
 		</div>

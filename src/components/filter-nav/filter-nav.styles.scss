@@ -1,11 +1,18 @@
 .filter-container {
 	margin-top: 50px;
 	position: relative;
+	display: flex;
 
 	h2 {
 		font-weight: 700;
 		color: #023050;
 		font-size: 18px;
+		margin-right: 90px;
+		transition: all .2s linear;
+
+		&:last-of-type{
+			margin-right: 0;
+		}
 
 		&:hover {
 			color: #5c85bf;
