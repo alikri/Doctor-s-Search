@@ -1,22 +1,32 @@
 .filter-container {
-	margin-top: 50px;
-	position: relative;
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	gap: 50px;
+	margin-top: 60px;
 
-	h2 {
-		font-weight: 700;
-		color: #023050;
-		font-size: 18px;
-		margin-right: 90px;
-		transition: all .2s linear;
+	.div-drop  {
+		position: relative;
+		height: 40px;
 
-		&:last-of-type{
-			margin-right: 0;
-		}
-
-		&:hover {
-			color: #5c85bf;
-			cursor: default;
+		.dropdown-btn {
+			padding: 4px 12px 6px 12px;
+			font-family: inherit;
+			background: none;
+			border: none;
+			width: 100%;
+			font-weight: 700;
+			color: #023050;
+			font-size: 18px;
+	
+			&:last-of-type{
+				margin-right: 0;
+			}
+	
+			&:hover {
+				color: #5c85bf;
+				cursor: default;
+				text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+			}
 		}
 	}
 }

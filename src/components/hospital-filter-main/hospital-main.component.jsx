@@ -1,4 +1,4 @@
-import "./hospital-main-page.styles.scss";
+import "./hospital-main.styles.scss"
 import { useContext } from "react";
 import crossClose from "../assets/cross-close.svg"
 import { Context } from "../context/filter-hospital-context";
@@ -19,7 +19,7 @@ const HospitalFilter = (props) => {
 
 	
 	return (
-		<div onMouseLeave={props.hideHospitalFilter} className="hospital-search-container">
+		<div onMouseEnter={props.showHospitalFilter} onMouseLeave={props.hideHospitalFilter} className="hospital-search-container">
 			<div className="hospital-input-container">
 				<input onChange={inputChange} className="filter-hospital" type="search" />
 				{/* <input className="filter-hospital-btn" type="submit" /> */}
