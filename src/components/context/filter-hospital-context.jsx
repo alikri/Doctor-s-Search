@@ -47,11 +47,6 @@ function FilterHospitalProvider({ children }) {
 		}
 
 	}
-	// const hospitalList = filteredHospital.map(hospital => <li key={hospital.id}>{hospital.name}</li>) 
-
-	// const selectedFacility = chosenHospital && chosenHospital.map(facility => <div key={facility} className="selected-hospital">{facility}
-	// 	<img onClick={removeChosen} className="cross-close" src={`${crossClose}`} alt="" />
-	// </div>)
 	
 	return (
 		<Context.Provider value={{hospitals, hospitalSearchField, filteredHospital, chosenHospital, inputChange, handleSelection, removeChosen}}>

@@ -13,14 +13,10 @@ const Home = () => {
 
 	return (
 		<div className="home-container" style={myStyles} >
-			{/* <FilterNavNew/> */}
 			<FilterNav />
-				<SearchBar />
+			<SearchBar />
 		</div>
-	// 	<div className="home-container" style={myStyles} onMouseEnter={hideHospitalFilter}>
-	// 	<FilterNav hover={hover} showHospitalFilter={showHospitalFilter} hideHospitalFilter={hideHospitalFilter} />
-	// 		<SearchBar />
-	// </div>
+
 	)
 }
 
