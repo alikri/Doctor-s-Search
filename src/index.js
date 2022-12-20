@@ -5,16 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from "react-router-dom";
 import { FilterHospitalProvider } from './components/context/filter-hospital-context';
+import { FilterRatingsProvider } from './components/context/filter-ratings-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
 		<Router>
 			<FilterHospitalProvider>
-				<App />
+			<App />
+				{/* <FilterRatingsProvider>
+			
+				</FilterRatingsProvider> */}
 			</FilterHospitalProvider>
 		</Router>
-  </React.StrictMode>
+	</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
