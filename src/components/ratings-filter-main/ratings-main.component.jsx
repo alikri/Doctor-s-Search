@@ -1,49 +1,11 @@
 import "./ratings-main.styles.scss";
-import { useState } from "react";
+import { useContext } from "react";
+import { ContextRatings } from "../context/filter-ratings-context";
 
 const RatingsFilter = () => {
-	const [rating, setRating] = useState([
-		{
-			star: 1,
-			on: false
-		},
-		{
-			star: 2,
-			on: false
-		},
-		{
-			star: 3,
-			on: false
-		},
-		{
-			star: 4,
-			on: false
-		},
-		{
-			star: 5,
-			on: false
-		},
-		{
-			star: 6,
-			on: false
-		},
-	]);
 
-	const handleRatings = (e) => {
-		console.log(e.target.id);
-		let current = e.target.id;
-		let currentN = current.split("")[current.length - 1];
-		console.log(currentN)
-		let updatedState = rating.map((item, index) => {
-			// let cIndex = index + 1;
-			if (item.star <= currentN) {
-				return {...item, on: true}
-			}
-			return {...item, on: false};
-		})
-		console.log(updatedState);
-		setRating(updatedState);
-	}
+	const {handleRatings, rating} = useContext(ContextRatings);
+
 
 	return (
 		<div className="ratings-container">

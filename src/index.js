@@ -12,10 +12,9 @@ root.render(
 	<React.StrictMode>
 		<Router>
 			<FilterHospitalProvider>
-			<App />
-				{/* <FilterRatingsProvider>
-			
-				</FilterRatingsProvider> */}
+				<FilterRatingsProvider>
+					<App />
+				</FilterRatingsProvider>
 			</FilterHospitalProvider>
 		</Router>
 	</React.StrictMode>
