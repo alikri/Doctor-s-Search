@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { FilterHospitalProvider } from './components/context/filter-hospital-context';
 import { FilterRatingsProvider } from './components/context/filter-ratings-context';
 import { FilterLanguageProvider } from './components/context/filter-language-context';
+import { FilterGenderProvider } from './components/context/filter-gender-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +16,9 @@ root.render(
 			<FilterHospitalProvider>
 				<FilterRatingsProvider>
 					<FilterLanguageProvider>
-						<App />
+						<FilterGenderProvider>
+							<App />
+						</FilterGenderProvider>
 					</FilterLanguageProvider>
 				</FilterRatingsProvider>
 			</FilterHospitalProvider>

@@ -19,41 +19,41 @@ const FilterNav = () => {
 		<div className="filter-container">
 
 			<div className="div-drop" onMouseEnter={() => setIsOpen1(true)} onMouseLeave={() => setIsOpen1(false)}>
-			<button className="dropdown-btn" >
-				Hospital
-			</button>
-			{isOpen1 && <HospitalFilter />}
+				<button className="dropdown-btn" >
+					Hospital
+				</button>
+				{isOpen1 && <HospitalFilter />}
 			</div>
 			<div className="div-drop" onMouseEnter={() => setIsOpen2(true)} onMouseLeave={() => setIsOpen2(false)}>
-			<button className="dropdown-btn" >
-				Ratings
-			</button>
-			{isOpen2 && <RatingsFilter />}
+				<button className="dropdown-btn" >
+					Ratings
+				</button>
+				{isOpen2 && <RatingsFilter />}
 			</div>
 			<div className="div-drop" onMouseEnter={() => setIsOpen3(true)} onMouseLeave={() => setIsOpen3(false)}>
-			<button className="dropdown-btn" >
-				Language
-			</button>
-			{isOpen3 && <LanguageFilter />}
+				<button className="dropdown-btn" >
+					Language
+				</button>
+				{isOpen3 && <LanguageFilter />}
 			</div>
 			<div className="div-drop" onMouseEnter={() => setIsOpen4(true)} onMouseLeave={() => setIsOpen4(false)}>
-			<button className="dropdown-btn" >
-				Gender
-			</button>
-			{isOpen4 && <GenderFilter />}
+				<button className="dropdown-btn" >
+					Gender
+				</button>
+				{isOpen4 && <GenderFilter />}
 			</div>
 			<div className="div-drop" onMouseEnter={() => setIsOpen5(true)} onMouseLeave={() => setIsOpen5(false)}>
-			<button className="dropdown-btn" >
-				Insurance
-			</button>
-			{isOpen5 && <InsuranceFilter />}
+				<button className="dropdown-btn" >
+					Insurance
+				</button>
+				{isOpen5 && <InsuranceFilter />}
 			</div>
 			<div className="div-drop" onMouseEnter={() => setIsOpen6(true)} onMouseLeave={() => setIsOpen6(false)}>
-			<button className="dropdown-btn" >
-				Distance
-			</button>
-			{isOpen6 && <DistanceFilter/>}
-			</div>	
+				<button className="dropdown-btn" >
+					Distance
+				</button>
+				{isOpen6 && <DistanceFilter />}
+			</div>
 		</div>
 	)
 }

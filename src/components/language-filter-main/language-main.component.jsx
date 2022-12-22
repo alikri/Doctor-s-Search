@@ -12,7 +12,6 @@ const LanguageFilter = () => {
 </div>)
 	return (
 		<div className="language-container">
-			<h2>Choose the preferred language of the provider:</h2>
 			{chosenLanguageToDisplay}
 			<ul onClick={handleLanguageSelection} >
 				{languageList}

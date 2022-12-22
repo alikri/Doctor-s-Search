@@ -29,7 +29,7 @@ function FilterHospitalProvider({ children }) {
 		setHospitalSearchFiel(searchFieldString);
 	}
 
-	function handleSelection(e) {
+	function handleHospitalSelection(e) {
 		if (e.target.tagName !== "LI") return;
 		let hospital = e.target.innerHTML;
 		if (chosenHospital == null) {
@@ -49,7 +49,7 @@ function FilterHospitalProvider({ children }) {
 	}
 	
 	return (
-		<ContextHospital.Provider value={{hospitals, hospitalSearchField, filteredHospital, chosenHospital, inputChange, handleSelection, removeChosen}}>
+		<ContextHospital.Provider value={{hospitals, hospitalSearchField, filteredHospital, chosenHospital, inputChange, handleHospitalSelection, removeChosen}}>
 			{children}
 		</ContextHospital.Provider>
 	)

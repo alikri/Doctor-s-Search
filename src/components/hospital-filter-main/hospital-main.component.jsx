@@ -8,7 +8,7 @@ const HospitalFilter = (props) => {
 	const { filteredHospital, 
 		chosenHospital, 
 		inputChange, 
-		handleSelection, 
+		handleHospitalSelection, 
 		removeChosen} = useContext(ContextHospital);
 
 	const hospitalList = filteredHospital.map(hospital => <li key={hospital.id}>{hospital.name}</li>) 
@@ -24,7 +24,7 @@ const HospitalFilter = (props) => {
 				<input onChange={inputChange} className="filter-hospital" type="search" />
 				{selectedFacility}
 			</div>
-			<ul onClick={handleSelection}>
+			<ul onClick={handleHospitalSelection}>
 				{hospitalList}
 			</ul>
 		</div>
