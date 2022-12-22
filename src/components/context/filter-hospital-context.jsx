@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState} from "react";
 import facilities from "../../hospitals";
 
-const Context = createContext();
+const ContextHospital = createContext();
 
 function FilterHospitalProvider({ children }) {
 
@@ -49,11 +49,11 @@ function FilterHospitalProvider({ children }) {
 	}
 	
 	return (
-		<Context.Provider value={{hospitals, hospitalSearchField, filteredHospital, chosenHospital, inputChange, handleSelection, removeChosen}}>
+		<ContextHospital.Provider value={{hospitals, hospitalSearchField, filteredHospital, chosenHospital, inputChange, handleSelection, removeChosen}}>
 			{children}
-		</Context.Provider>
+		</ContextHospital.Provider>
 	)
 
 }
 
-export { Context, FilterHospitalProvider };
+export { ContextHospital, FilterHospitalProvider };

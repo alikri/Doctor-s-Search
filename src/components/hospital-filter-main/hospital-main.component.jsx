@@ -1,7 +1,7 @@
 import "./hospital-main.styles.scss"
 import { useContext } from "react";
 import crossClose from "../assets/cross-close.svg"
-import { Context } from "../context/filter-hospital-context";
+import { ContextHospital } from "../context/filter-hospital-context";
 
 const HospitalFilter = (props) => {
 
@@ -9,11 +9,11 @@ const HospitalFilter = (props) => {
 		chosenHospital, 
 		inputChange, 
 		handleSelection, 
-		removeChosen} = useContext(Context);
+		removeChosen} = useContext(ContextHospital);
 
 	const hospitalList = filteredHospital.map(hospital => <li key={hospital.id}>{hospital.name}</li>) 
 
-	const selectedFacility = chosenHospital && chosenHospital.map(facility => <div key={facility} className="selected-hospital">{facility}
+	const selectedFacility = chosenHospital && chosenHospital.map(facility => <div key={facility} className="selected-filter">{facility}
 		<img onClick={removeChosen} className="cross-close" src={`${crossClose}`} alt="" />
 	</div>)
 
@@ -22,7 +22,6 @@ const HospitalFilter = (props) => {
 		<div onMouseEnter={props.showHospitalFilter} onMouseLeave={props.hideHospitalFilter} className="hospital-search-container">
 			<div className="hospital-input-container">
 				<input onChange={inputChange} className="filter-hospital" type="search" />
-				{/* <input className="filter-hospital-btn" type="submit" /> */}
 				{selectedFacility}
 			</div>
 			<ul onClick={handleSelection}>

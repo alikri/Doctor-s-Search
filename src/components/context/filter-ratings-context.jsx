@@ -4,6 +4,8 @@ const ContextRatings = createContext();
 
 function FilterRatingsProvider({children}) {
 
+	const [chosenRating, setChosenRating] = useState(null)
+	console.log(chosenRating);
 	const [rating, setRating] = useState([
 		{
 			star: 1,
@@ -32,17 +34,15 @@ function FilterRatingsProvider({children}) {
 	]);
 
 	const handleRatings = (e) => {
-		console.log(e.target.id);
 		let current = e.target.id;
 		let currentN = current.split("")[current.length - 1];
-		console.log(currentN)
+		setChosenRating(currentN);
 		let updatedState = rating.map(item => {
 			if (item.star <= currentN) {
 				return {...item, on: true}
 			}
 			return {...item, on: false};
 		})
-		console.log(updatedState);
 		setRating(updatedState);
 	}
 	return (

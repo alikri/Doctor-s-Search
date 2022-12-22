@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from "react-router-dom";
 import { FilterHospitalProvider } from './components/context/filter-hospital-context';
 import { FilterRatingsProvider } from './components/context/filter-ratings-context';
+import { FilterLanguageProvider } from './components/context/filter-language-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,9 @@ root.render(
 		<Router>
 			<FilterHospitalProvider>
 				<FilterRatingsProvider>
-					<App />
+					<FilterLanguageProvider>
+						<App />
+					</FilterLanguageProvider>
 				</FilterRatingsProvider>
 			</FilterHospitalProvider>
 		</Router>
