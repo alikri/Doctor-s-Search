@@ -34,6 +34,8 @@ function FilterRatingsProvider({children}) {
 	]);
 
 	const handleRatings = (e) => {
+		console.log(e);
+		if (e.target.tagName !== "SPAN") return;
 		let current = e.target.id;
 		let currentN = current.split("")[current.length - 1];
 		setChosenRating(currentN);
