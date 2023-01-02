@@ -9,8 +9,10 @@ import { FilterRatingsProvider } from './components/context/filter-ratings-conte
 import { FilterLanguageProvider } from './components/context/filter-language-context';
 import { FilterGenderProvider } from './components/context/filter-gender-context';
 import { FilterInsuranceProvider } from './components/context/filter-insurance-context';
+import { FilterDistanceProvider } from './components/context/filter-distance-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
 	<React.StrictMode>
 		<Router>
@@ -19,7 +21,9 @@ root.render(
 					<FilterLanguageProvider>
 						<FilterGenderProvider>
 							<FilterInsuranceProvider>
-								<App />
+								<FilterDistanceProvider>
+									<App />
+								</FilterDistanceProvider>
 							</FilterInsuranceProvider>
 						</FilterGenderProvider>
 					</FilterLanguageProvider>
