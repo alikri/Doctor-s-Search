@@ -8,6 +8,7 @@ import { FilterHospitalProvider } from './components/context/filter-hospital-con
 import { FilterRatingsProvider } from './components/context/filter-ratings-context';
 import { FilterLanguageProvider } from './components/context/filter-language-context';
 import { FilterGenderProvider } from './components/context/filter-gender-context';
+import { FilterInsuranceProvider } from './components/context/filter-insurance-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,7 +18,9 @@ root.render(
 				<FilterRatingsProvider>
 					<FilterLanguageProvider>
 						<FilterGenderProvider>
-							<App />
+							<FilterInsuranceProvider>
+								<App />
+							</FilterInsuranceProvider>
 						</FilterGenderProvider>
 					</FilterLanguageProvider>
 				</FilterRatingsProvider>

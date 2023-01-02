@@ -3,7 +3,7 @@
 	background-color: white;
 	max-height: 300px;
 	overflow: scroll;
-	width: 350px;
+	max-width: 350px;
 	position: absolute;
 	top: 40px;
 	left: -100px;
@@ -14,8 +14,7 @@
 	transition: all .1s linear;
 
 	.filter-insurance{
-		margin-bottom: 5px;
-		margin-left: 20px;
+		margin: 10px 5px 5px;
 		width: 307px;
 		font-family: inherit;
 		background: white;
