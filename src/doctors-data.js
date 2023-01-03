@@ -1,4 +1,4 @@
-const doctors = [
+const doctorsData = [
         {
             "name": "Dr. Jane Smith",
             "specialization": "Pediatrics",
@@ -10,7 +10,8 @@ const doctors = [
             "languageSpoken": ["English", "Spanish"],
             "mainLocation": "123 Main St",
             "additionalLocations": ["456 Market St", "789 Park Ave"],
-            "networkStatus": "In-Network"
+		"networkStatus": "In-Network",
+			"id": "fjkvfdkjdf"
         },
         {
             "name": "Dr. John Doe",
@@ -23,7 +24,8 @@ const doctors = [
             "languageSpoken": ["English", "Mandarin"],
             "mainLocation": "321 Main St",
             "additionalLocations": ["654 Market St", "987 Park Ave"],
-            "networkStatus": "In-Network"
+            "networkStatus": "In-Network",
+			"id": "fjkvfdddddddkjdf"
         },
         {
             "name": "Dr. Alice Johnson",
@@ -36,7 +38,8 @@ const doctors = [
             "languageSpoken": ["English", "French"],
             "mainLocation": "456 Market St",
             "additionalLocations": ["789 Park Ave", "123 Main St"],
-            "networkStatus": "Out-of-Network"
+            "networkStatus": "Out-of-Network",
+			"id": "fjkffffffqqqvfdkjdf"
         },
         {
             "name": "Dr. Bob Williams",
@@ -49,7 +52,8 @@ const doctors = [
             "languageSpoken": ["English", "Russian"],
             "mainLocation": "789 Park Ave",
             "additionalLocations": ["123 Main St", "456 Market St"],
-            "networkStatus": "In-Network"
+            "networkStatus": "In-Network",
+			"id": "fjkvfder4432sf"
         },
         {
             "name": "Dr. Jennifer Davis",
@@ -62,7 +66,8 @@ const doctors = [
             "languageSpoken": ["English", "Arabic"],
             "mainLocation": "987 Park Ave",
             "additionalLocations": ["654 Market St", "321 Main St"],
-            "networkStatus": "In-Network"
+			"networkStatus": "In-Network",
+			"id": "fjkvfdkqazxswjdf"
 		},
 		{
 			"name": "Dr. Maria Rodriguez",
@@ -75,7 +80,8 @@ const doctors = [
 			"languageSpoken": ["English", "Spanish"],
 			"mainLocation": "123 Main St",
 			"additionalLocations": ["456 Market St", "789 Park Ave"],
-			"networkStatus": "In-Network"
+			"networkStatus": "In-Network",
+			"id": "fjkvfdkjdfddsssdddssdaa"
 		},
 		{
 			"name": "Dr. David Kim",
@@ -88,7 +94,8 @@ const doctors = [
 			"languageSpoken": ["English", "Korean"],
 			"mainLocation": "321 Main St",
 			"additionalLocations": ["654 Market St", "987 Park Ave"],
-			"networkStatus": "In-Network"
+			"networkStatus": "In-Network",
+			"id": "fjkvfdkjpppppqqqqqdf"
 		},
 		{
 			"name": "Dr. Elizabeth Thomas",
@@ -101,7 +108,8 @@ const doctors = [
 			"languageSpoken": ["English", "German"],
 			"mainLocation": "456 Market St",
 			"additionalLocations": ["789 Park Ave", "123 Main St"],
-			"networkStatus": "Out-of-Network"
+			"networkStatus": "Out-of-Network",
+			"id": "fjkvfdwqqqwertyypuof"
 		},
 		{
 			"name": "Dr. Michael Anderson",
@@ -114,7 +122,8 @@ const doctors = [
 			"languageSpoken": ["English", "Japanese"],
 			"mainLocation": "789 Park Ave",
 			"additionalLocations": ["123 Main St", "456 Market St"],
-			"networkStatus": "In-Network"
+			"networkStatus": "In-Network",
+			"id": "fjkvfdkjdfscdkmddxcv"
 		},
 		{
 			"name": "Dr. Sarah Patel",
@@ -127,9 +136,81 @@ const doctors = [
 			"languageSpoken": ["English", "Hindi"],
 			"mainLocation": "987 Park Ave",
 			"additionalLocations": ["654 Market St", "321 Main St"],
-			"networkStatus": "In-Network"
-		}
-			
-
+			"networkStatus": "In-Network",
+			"id": "fjkvfflcccxxxxcfdkjdf"
+	},
+			{
+				"name": "Dr. Maria Rodriguez",
+				"specialization": "Obstetrics & Gynecology",
+				"zipcode": 90210,
+				"hospital": "Cedars-Sinai Medical Center",
+				"insuranceAccepted": ["Blue Cross Blue Shield", "Aetna"],
+				"ratings": 4.9,
+				"gender": "Female",
+				"languageSpoken": ["English", "Spanish"],
+				"mainLocation": "123 Main St",
+				"additionalLocations": ["456 Market St", "789 Park Ave"],
+				"networkStatus": "In-Network",
+				"id": "fjkvfflcccbbbbbbxcfdkjdf"
+			},
+			{
+				"name": "Dr. David Kim",
+				"specialization": "Ophthalmology",
+				"zipcode": 10001,
+				"hospital": "NewYork-Presbyterian Hospital",
+				"insuranceAccepted": ["Cigna", "UnitedHealthcare"],
+				"ratings": 4.7,
+				"gender": "Male",
+				"languageSpoken": ["English", "Korean"],
+				"mainLocation": "321 Main St",
+				"additionalLocations": ["654 Market St", "987 Park Ave"],
+				"networkStatus": "In-Network",
+				"id": "fjkvppplbnmbb",
+			},
+			{
+				"name": "Dr. Elizabeth Thomas",
+				"specialization": "Psychiatry",
+				"zipcode": 60606,
+				"hospital": "Rush University Medical Center",
+				"insuranceAccepted": ["Medicare", "Anthem"],
+				"ratings": 4.8,
+				"gender": "Female",
+				"languageSpoken": ["English", "German"],
+				"mainLocation": "456 Market St",
+				"additionalLocations": ["789 Park Ave", "123 Main St"],
+				"networkStatus": "Out-of-Network",
+				"id": "fjkvppplbnmbqq",
+			},
+			{
+				"name": "Dr. Michael Anderson",
+				"specialization": "Neurology",
+				"zipcode": 80808,
+				"hospital": "Kaiser Permanente",
+				"insuranceAccepted": ["Blue Shield", "HealthNet"],
+				"ratings": 4.6,
+				"gender": "Male",
+				"languageSpoken": ["English", "Japanese"],
+				"mainLocation": "789 Park Ave",
+				"additionalLocations": ["123 Main St", "456 Market St"],
+				"networkStatus": "In-Network",
+				"id": "fjkvppplbnmmmn",
+			},
+			{
+				"name": "Dr. Sarah Patel",
+				"specialization": "Endocrinology",
+				"zipcode": 70707,
+				"hospital": "Mayo Clinic",
+				"insuranceAccepted": ["Aetna", "Cigna"],
+				"ratings": 4.9,
+				"gender": "Female",
+				"languageSpoken": ["English", "Hindi"],
+				"mainLocation": "987 Park Ave",
+				"additionalLocations": ["654 Market St", "321 Main St"],
+				"networkStatus": "In-Network",
+				"id": "fjkvppplbnmddddd",
+			}
+		
+	
 ]
 
+export default doctorsData;

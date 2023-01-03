@@ -2,14 +2,17 @@ import './App.css';
 import Home from './components/home /home.component';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
-// import {Link, Switch, Route} from "react-router-dom"
+import Doctors from './components/doctors/doctors.component';
+import { Link, Routes, Route } from "react-router-dom";
+
 function App() {
 	return (
 		<div>
 			<Header />
 			<Home />
 			<Footer />
-    </div>
+		</div>
+		
 	);
 }
 
