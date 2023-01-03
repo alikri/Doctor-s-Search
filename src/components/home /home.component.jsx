@@ -2,8 +2,7 @@ import "./home.styles.scss";
 import image from "../assets/home-background.png";
 import SearchBar from "../search bar/searchBar.component";
 import FilterNav from "../filter-nav/filter-nav.component";
-import FilterNavNew from "../additional-component/filter-nav-new";
-import { useState } from "react";
+
 
 const Home = () => {
 	
