@@ -1,0 +1,84 @@
+.doc-preview-container {
+	margin: 20px;
+	display: flex;
+	align-items: center;
+	max-width: 1100px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	color:#01497C;
+
+
+	.img-container-docp {
+		margin: 20px;
+		display: flex;
+		flex-direction: column;
+
+		.network-container-docp {
+			margin-top: 15px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			img {
+				margin-right: 5px;
+			}
+		}
+		
+	}
+	.doc-info-container-docp {
+		margin: 20px;
+
+		h2 {
+			font-size: 20px;
+			font-weight: 500;
+			margin: 0;
+			padding: 0;
+		}
+		p {
+			margin-block: 4px;
+			font-size: 14px;
+		}
+
+		.ratings-doc-preview {
+			min-width: 300px;
+			display: flex;
+			align-items: center;
+			border-bottom: 1px solid #EAE7DE;
+			padding-bottom: 10px;
+			img {
+				width: 15px;
+				height: 15px;
+				margin-right: 5px;
+			}
+			p {
+				display: inline-block;
+				font-weight: 300;
+
+				span {
+					color: #979DAC;
+				}
+			}
+
+		}
+
+		.gender-container-docp {
+			margin-top: 25px;
+			display: flex;
+			justify-content: space-between;
+
+			.gender-bold {
+				font-weight: 600;
+				font-size: 12px;
+
+				p {
+					font-weight: 300;
+					font-size: 13px;
+				}
+			}
+		}
+
+
+	}
+
+}

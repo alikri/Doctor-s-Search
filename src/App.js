@@ -1,4 +1,4 @@
-import './App.css';
+import './app.styles.scss';
 import Home from './components/home /home.component';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
@@ -7,7 +7,7 @@ import { Link, Routes, Route } from "react-router-dom";
 
 function App() {
 	return (
-		<div>
+		<div className='main-content'>
 			<Header />
 			<Home />
 			<Footer />
