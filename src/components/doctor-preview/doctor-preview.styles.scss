@@ -1,5 +1,5 @@
 .doc-preview-container {
-	margin: 20px;
+	margin: 8px;
 	display: flex;
 	align-items: center;
 	max-width: 1100px;
@@ -9,8 +9,8 @@
 	color:#01497C;
 
 
-	.img-container-docp {
-		margin: 20px;
+	.doc-img-container-docp {
+		margin: 0 40px 0 40px;
 		display: flex;
 		flex-direction: column;
 
@@ -27,58 +27,132 @@
 		
 	}
 	.doc-info-container-docp {
-		margin: 20px;
-
-		h2 {
-			font-size: 20px;
-			font-weight: 500;
-			margin: 0;
-			padding: 0;
-		}
-		p {
-			margin-block: 4px;
-			font-size: 14px;
-		}
-
-		.ratings-doc-preview {
-			min-width: 300px;
-			display: flex;
-			align-items: center;
+		margin: 20px 0 20px 0;
+		.top-border-container {
+			padding-right: 150px;
+			height: 85px;
 			border-bottom: 1px solid #EAE7DE;
-			padding-bottom: 10px;
-			img {
-				width: 15px;
-				height: 15px;
-				margin-right: 5px;
+
+			h2 {
+				font-size: 20px;
+				font-weight: 500;
+				margin: 0;
+				padding: 0;
 			}
 			p {
-				display: inline-block;
-				font-weight: 300;
-
-				span {
-					color: #979DAC;
-				}
+				margin-block: 4px;
+				font-size: 14px;
 			}
-
+	
+			.ratings-doc-preview {
+				display: flex;
+				align-items: center;
+				padding-bottom: 10px;
+				img {
+					width: 15px;
+					height: 15px;
+					margin-right: 5px;
+				}
+				p {
+					display: inline-block;
+					font-weight: 300;
+	
+					span {
+						color: #979DAC;
+					}
+				}
+	
+			}
 		}
 
+
 		.gender-container-docp {
-			margin-top: 25px;
+			margin-top: 20px;
+			margin-right: 70px;
 			display: flex;
 			justify-content: space-between;
+		
 
 			.gender-bold {
+				padding-top: 3px;
 				font-weight: 600;
 				font-size: 12px;
 
 				p {
+					margin-top: 10px;
 					font-weight: 300;
 					font-size: 13px;
 				}
 			}
 		}
-
-
+		
+		.language-container-docp {
+			span {
+				font-weight: 600;
+				font-size: 12px;
+			}
+			ul {
+				margin: 0;
+				padding: 10px 0 0 25px;
+				
+				li {
+					font-weight: 300;
+					font-size: 13px;
+				}
+			}
+		}
 	}
+
+	.doc-contact-container-docp {
+		.location-container-docp {
+			padding-right: 50px;
+			padding-left: 30px;
+			height: 85px;
+			border-bottom: 1px solid #EAE7DE;
+			border-left: 1px solid #EAE7DE;
+			margin-bottom: 24px;
+
+			h3 {
+				font-weight: 600;
+				font-size: 12px;
+			}
+
+			p {
+				max-width: 170px;
+				font-weight: 300;
+				font-size: 12px;
+				margin: 3px 0 0 0;
+			}
+
+			.phone-docp {
+				margin: 8px 0 0 0;
+
+				span {
+					font-weight: 600;
+					font-size: 12px;
+				}
+			}
+		}
+
+		.facility-container-docp {
+			h3 {
+			
+				font-weight: 600;
+				font-size: 12px;
+			}
+			ul {
+				margin: 0;
+				padding: 10px 0 0 25px;
+				
+				li {
+					font-weight: 300;
+					font-size: 13px;
+				}
+			}
+
+		}
+	}
+	
+	
 
 }
