@@ -5,12 +5,15 @@ const doctorsData = [
             "zipcode": 90210,
             "hospital": "Cedars-Sinai Medical Center",
             "insuranceAccepted": ["Blue Cross Blue Shield", "Aetna"],
-            "ratings": 4.9,
+			"ratings": {
+				rating: 4.9,
+				number: 124
+			},
             "gender": "Female",
-            "languageSpoken": ["English", "Spanish"],
+            "languageSpoken": ["English", "Spanish", "Mandarin", "German", "Russian"],
             "mainLocation": "123 Main St",
             "additionalLocations": ["456 Market St", "789 Park Ave"],
-		"networkStatus": "In-Network",
+			"networkStatus": "In-Network",
 			"id": "fjkvfdkjdf"
         },
         {
@@ -19,7 +22,10 @@ const doctorsData = [
             "zipcode": 10001,
             "hospital": "NewYork-Presbyterian Hospital",
             "insuranceAccepted": ["Cigna", "UnitedHealthcare"],
-            "ratings": 4.7,
+            "ratings": {
+				rating: 4.5,
+				number: 84
+			},
             "gender": "Male",
             "languageSpoken": ["English", "Mandarin"],
             "mainLocation": "321 Main St",
@@ -33,7 +39,10 @@ const doctorsData = [
             "zipcode": 60606,
             "hospital": "Rush University Medical Center",
             "insuranceAccepted": ["Medicare", "Anthem"],
-            "ratings": 4.8,
+            "ratings": {
+				rating: 4.9,
+				number: 18
+			},
             "gender": "Female",
             "languageSpoken": ["English", "French"],
             "mainLocation": "456 Market St",
@@ -47,7 +56,10 @@ const doctorsData = [
             "zipcode": 80808,
             "hospital": "Kaiser Permanente",
             "insuranceAccepted": ["Blue Shield", "HealthNet"],
-            "ratings": 4.6,
+            "ratings": {
+				rating: 4.3,
+				number: 234
+			},
             "gender": "Male",
             "languageSpoken": ["English", "Russian"],
             "mainLocation": "789 Park Ave",
@@ -61,7 +73,10 @@ const doctorsData = [
             "zipcode": 70707,
             "hospital": "Mayo Clinic",
             "insuranceAccepted": ["Aetna", "Cigna"],
-            "ratings": 4.9,
+            "ratings": {
+				rating: 4.0,
+				number: 94
+			},
             "gender": "Female",
             "languageSpoken": ["English", "Arabic"],
             "mainLocation": "987 Park Ave",
@@ -75,7 +90,10 @@ const doctorsData = [
 			"zipcode": 90210,
 			"hospital": "Cedars-Sinai Medical Center",
 			"insuranceAccepted": ["Blue Cross Blue Shield", "Aetna"],
-			"ratings": 4.9,
+			"ratings": {
+				rating: 4.5,
+				number: 65
+			},
 			"gender": "Female",
 			"languageSpoken": ["English", "Spanish"],
 			"mainLocation": "123 Main St",
@@ -89,7 +107,10 @@ const doctorsData = [
 			"zipcode": 10001,
 			"hospital": "NewYork-Presbyterian Hospital",
 			"insuranceAccepted": ["Cigna", "UnitedHealthcare"],
-			"ratings": 4.7,
+			"ratings": {
+				rating: 3.9,
+				number: 32
+			},
 			"gender": "Male",
 			"languageSpoken": ["English", "Korean"],
 			"mainLocation": "321 Main St",
@@ -103,7 +124,10 @@ const doctorsData = [
 			"zipcode": 60606,
 			"hospital": "Rush University Medical Center",
 			"insuranceAccepted": ["Medicare", "Anthem"],
-			"ratings": 4.8,
+			"ratings": {
+				rating: 4.8,
+				number: 54
+			},
 			"gender": "Female",
 			"languageSpoken": ["English", "German"],
 			"mainLocation": "456 Market St",
@@ -117,7 +141,10 @@ const doctorsData = [
 			"zipcode": 80808,
 			"hospital": "Kaiser Permanente",
 			"insuranceAccepted": ["Blue Shield", "HealthNet"],
-			"ratings": 4.6,
+			"ratings": {
+				rating: 4.2,
+				number: 21
+			},
 			"gender": "Male",
 			"languageSpoken": ["English", "Japanese"],
 			"mainLocation": "789 Park Ave",
@@ -131,7 +158,10 @@ const doctorsData = [
 			"zipcode": 70707,
 			"hospital": "Mayo Clinic",
 			"insuranceAccepted": ["Aetna", "Cigna"],
-			"ratings": 4.9,
+			"ratings": {
+				rating: 4.9,
+				number: 7
+			},
 			"gender": "Female",
 			"languageSpoken": ["English", "Hindi"],
 			"mainLocation": "987 Park Ave",
@@ -145,7 +175,10 @@ const doctorsData = [
 				"zipcode": 90210,
 				"hospital": "Cedars-Sinai Medical Center",
 				"insuranceAccepted": ["Blue Cross Blue Shield", "Aetna"],
-				"ratings": 4.9,
+				"ratings": {
+					rating: 4.9,
+					number: 4
+				},
 				"gender": "Female",
 				"languageSpoken": ["English", "Spanish"],
 				"mainLocation": "123 Main St",
@@ -159,7 +192,10 @@ const doctorsData = [
 				"zipcode": 10001,
 				"hospital": "NewYork-Presbyterian Hospital",
 				"insuranceAccepted": ["Cigna", "UnitedHealthcare"],
-				"ratings": 4.7,
+				"ratings": {
+					rating: 4.7,
+					number: 12
+				},
 				"gender": "Male",
 				"languageSpoken": ["English", "Korean"],
 				"mainLocation": "321 Main St",
@@ -173,7 +209,10 @@ const doctorsData = [
 				"zipcode": 60606,
 				"hospital": "Rush University Medical Center",
 				"insuranceAccepted": ["Medicare", "Anthem"],
-				"ratings": 4.8,
+				"ratings": {
+					rating: 4.1,
+					number: 14
+				},
 				"gender": "Female",
 				"languageSpoken": ["English", "German"],
 				"mainLocation": "456 Market St",
@@ -187,7 +226,10 @@ const doctorsData = [
 				"zipcode": 80808,
 				"hospital": "Kaiser Permanente",
 				"insuranceAccepted": ["Blue Shield", "HealthNet"],
-				"ratings": 4.6,
+				"ratings": {
+					rating: 4.6,
+					number: 98
+				},
 				"gender": "Male",
 				"languageSpoken": ["English", "Japanese"],
 				"mainLocation": "789 Park Ave",
@@ -201,7 +243,10 @@ const doctorsData = [
 				"zipcode": 70707,
 				"hospital": "Mayo Clinic",
 				"insuranceAccepted": ["Aetna", "Cigna"],
-				"ratings": 4.9,
+				"ratings": {
+					rating: 4.9,
+					number: 64
+				},
 				"gender": "Female",
 				"languageSpoken": ["English", "Hindi"],
 				"mainLocation": "987 Park Ave",
