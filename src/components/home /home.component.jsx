@@ -3,7 +3,7 @@ import image from "../assets/home-background.png";
 import SearchBar from "../search bar/searchBar.component";
 import FilterNav from "../filter-nav/filter-nav.component";
 import Doctors from "../doctors/doctors.component";
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 const Home = () => {
 	

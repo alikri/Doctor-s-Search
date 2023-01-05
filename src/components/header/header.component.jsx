@@ -1,5 +1,6 @@
 import "./header.styles.scss";
 import docIcon from "../assets/doc-icon.svg";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -11,7 +12,9 @@ const Header = () => {
 					<div className="logo-container">
 						<img src={docIcon} alt="" />
 					</div>
-					<h2>DocforYou</h2>
+					<Link to="/" style={{ textDecoration: "none", color: "white" }} >
+						<h2>DocforYou</h2>
+					</Link>
 				</div>
 				<div className="header-right">
 					<span>Sign-in / Sign-up</span>
