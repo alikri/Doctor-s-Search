@@ -1,7 +1,7 @@
 .doc-preview-container {
 	margin: 8px;
 	display: flex;
-	align-items: center;
+	// align-items: center;
 	max-width: 1100px;
 	background-color: white;
 	border-radius: 10px;
@@ -10,7 +10,7 @@
 
 
 	.doc-img-container-docp {
-		margin: 0 40px 0 40px;
+		margin: 30px 40px 0px 40px;
 		display: flex;
 		flex-direction: column;
 
@@ -20,14 +20,19 @@
 			justify-content: center;
 			align-items: center;
 
+			.network-docp {
+				font-size: 13px;
+			}
+
 			img {
-				margin-right: 5px;
+				margin-right: 3px;
 			}
 		}
 		
 	}
 	.doc-info-container-docp {
 		margin: 20px 0 20px 0;
+
 		.top-border-container {
 			padding-right: 150px;
 			height: 85px;
@@ -48,11 +53,13 @@
 				display: flex;
 				align-items: center;
 				padding-bottom: 10px;
+
 				img {
 					width: 15px;
 					height: 15px;
 					margin-right: 5px;
 				}
+
 				p {
 					display: inline-block;
 					font-weight: 300;
@@ -104,13 +111,15 @@
 	}
 
 	.doc-contact-container-docp {
+		margin: 20px 0 20px 0;
+
 		.location-container-docp {
+			
 			padding-right: 50px;
 			padding-left: 30px;
 			height: 85px;
 			border-bottom: 1px solid #EAE7DE;
 			border-left: 1px solid #EAE7DE;
-			margin-bottom: 24px;
 
 			h3 {
 				font-weight: 600;
@@ -135,8 +144,9 @@
 		}
 
 		.facility-container-docp {
+			padding: 22px 0 0 30px;
+
 			h3 {
-			
 				font-weight: 600;
 				font-size: 12px;
 			}

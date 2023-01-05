@@ -9,19 +9,18 @@ const DoctorPreview = (props) => {
 				<img src={docsIcon} alt="" />
 				<div className="network-container-docp"> 
 					<div><img src={network} alt="" /></div>
-					<div>Network</div>
+					<div className="network-docp">Network</div>
 				</div>
 			</div>
 			<div className="doc-info-container-docp">
 				<div className="top-border-container"> 
-				<h2>Marry Hill, MD</h2>
-				<p>Dermatologist</p>
-				<div className="ratings-doc-preview">
-					<img src={star} alt="" />
-					<p>4,65 <span>(345)</span></p>
+					<h2>Marry Hill, MD</h2>
+					<p>Dermatologist</p>
+					<div className="ratings-doc-preview">
+						<img src={star} alt="" />
+						<p>4,65 <span>(345)</span></p>
+					</div>
 				</div>
-				</div>
-				
 				<div className="gender-container-docp">
 					<div className="gender-bold">Gender:
 						<p>Female</p>
