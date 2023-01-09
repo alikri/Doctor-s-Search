@@ -1,11 +1,11 @@
 import "./filter-nav.styles.scss";
 import HospitalFilter from "../hospital-filter-main/hospital-main.component";
 import RatingsFilter from "../ratings-filter-main/ratings-main.component"
-import { useState } from "react";
 import LanguageFilter from "../language-filter-main/language-main.component";
 import GenderFilter from "../gender-filter-main/gender-main.component";
 import InsuranceFilter from "../insurance-filter-main/insurance-main.component";
 import DistanceFilter from "../distance-filter-main/distance-main.component";
+import { useState } from "react";
 
 const FilterNav = () => {
 	const [isOpen1, setIsOpen1] = useState(false);
