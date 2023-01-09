@@ -75,6 +75,7 @@ const Doctors = () => {
 				<div className="doc-list-filter-container">
 					<button
 						onClick={handleSideFiltersOpenning}
+						style={{width: asideFilters && "350px"}}
 					>Filter Options</button>
 				</div>
 				{
