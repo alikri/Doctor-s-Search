@@ -1,13 +1,51 @@
 import "./doctors.styles.scss";
-import doctorsData from "../../doctors-data";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import DoctorPreview from "../doctor-preview/doctor-preview.component";
+import loop from "../assets/loopToSearch.svg"
 
 const Doctors = () => {
 
-	const [doctors, setDoctors] = useState(doctorsData);
+	const location = useLocation();
+	const { zipcodeMain, docSearchMainPage } = location.state;
+	const [doctors, setDoctors] = useState(null);
+	const [docSearchField, setDocSearchFiel] = useState(docSearchMainPage);
+	const [filteredDocs, setFilteredDocs] = useState(doctors);
+	const [zipcode, setZipcode] = useState(zipcodeMain);
+
+
+	useEffect(() => {
+		fetch("https://woyllyhb24txpvnuetgcn4lgw40pgmbc.lambda-url.eu-central-1.on.aws/?page=1&pageSize=30")
+			.then(response => response.json())
+			.then(data => setDoctors(data.results));
 	
-	const doctorList = doctors.map(doc => <DoctorPreview
+	}, []);
+
+	useEffect(() => {
+		const filteredSearch = doctors && doctors.filter(
+			({ name, specialization}) =>
+			  	name.toLowerCase().includes(docSearchField.toLowerCase()) ||
+				specialization.toLowerCase().includes(docSearchField.toLowerCase())
+		);
+		const sortedFilteredSearch = filteredSearch && filteredSearch.sort((a,b) => a.zipcode - b.zipcode)
+		setFilteredDocs(sortedFilteredSearch);
+	}, [doctors, docSearchField]);
+
+
+
+	const handleZipcodeChange = (e) => {
+		let number = e.target.value;
+		setZipcode(number);
+	}
+
+
+	const inputChangeDocListPage = (e) => {
+		let input = e.target.value;
+		setDocSearchFiel(input);
+	}
+
+	
+	const doctorList = filteredDocs && filteredDocs.map(doc => <DoctorPreview
 		key={doc.id}
 		name={doc.name}
 		ratings={doc.ratings}
@@ -23,8 +61,42 @@ const Doctors = () => {
 	/>)
 
 	return (
-		<div className="doc-big-container">
-			{doctorList}
+		<div className="doc-list-page-container">
+			<div className="doc-list-filter-container">
+				<button>Filter Options</button>
+			</div>
+			{
+				doctors &&
+				<div>
+					<div className="search-doc-list">
+						<input
+							onChange={handleZipcodeChange}
+							value={zipcode}
+							className="doc-list-zip"
+							type="search"
+							placeholder="zip code" />
+						<input
+							className="doc-list-search"
+							type="search"
+							placeholder="search by speciality, name"
+							value={docSearchField}
+							onChange={inputChangeDocListPage}
+						/>
+						<button
+							className="search-btn"
+						>
+							<img src={loop} alt="" />
+							<span>Search</span>
+						</button>
+						</div>
+						<div className="doc-list-page-msg">
+							<h2> {filteredDocs && filteredDocs.length} options within 20 miles of {zipcode}</h2>
+						</div>
+				</div>
+			}
+			<div className="doc-big-container">
+				{doctorList}
+			</div>
 		</div>
 	)
 }
