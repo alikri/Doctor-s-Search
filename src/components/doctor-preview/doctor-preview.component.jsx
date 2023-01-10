@@ -2,7 +2,7 @@ import "./doctor-preview.styles.scss";
 import star from "../assets/Star-doc-review.svg";
 import docsIcon from "../assets/preview-doc-icon.svg";
 import network from "../assets/network.svg";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const DoctorPreview = (props) => {
 
