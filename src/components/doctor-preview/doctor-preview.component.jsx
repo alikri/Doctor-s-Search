@@ -2,9 +2,12 @@ import "./doctor-preview.styles.scss";
 import star from "../assets/Star-doc-review.svg";
 import docsIcon from "../assets/preview-doc-icon.svg";
 import network from "../assets/network.svg";
+import {Link} from "react-router-dom"
+
 const DoctorPreview = (props) => {
-	const { name, gender, specialization, hospital, zipcode, languageSpoken, ratings, networkStatus, mainLocation } = props;
-	
+
+	const { name, gender, specialization, hospital, zipcode, languageSpoken, ratings, networkStatus, mainLocation, id } = props;
+
 	const languageSpokenList = languageSpoken.map(lang => <li key={lang}>{lang}</li>)
 
 	return (
@@ -18,7 +21,7 @@ const DoctorPreview = (props) => {
 			</div>
 			<div className="doc-info-container-docp">
 				<div className="top-border-container"> 
-					<h2>{name}</h2>
+					<Link to={`/doctors/${id}`} style={{textDecoration: "none"}}><h2>{name}</h2></Link>
 					<p>{specialization}</p>
 					<div className="ratings-doc-preview">
 						<img src={star} alt="" />

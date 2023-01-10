@@ -54,6 +54,7 @@ const Doctors = () => {
 
 	const doctorList = filteredDocs && filteredDocs.map(doc => <DoctorPreview
 		key={doc.id}
+		id={doc.id}
 		name={doc.name}
 		ratings={doc.ratings}
 		specialization={doc.specialization}

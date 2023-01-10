@@ -3,6 +3,8 @@ import image from "../assets/home-background.png";
 import SearchBar from "../search bar/searchBar.component";
 import FilterNav from "../filter-nav/filter-nav.component";
 import Doctors from "../doctors/doctors.component";
+import DoctorProfile from "../doctor-profile/doctor-profile.component";
+
 import { Routes, Route } from "react-router-dom";
 
 const Home = () => {
@@ -15,7 +17,8 @@ const Home = () => {
 
 			<Routes>
 				<Route index element={<><FilterNav /><SearchBar/></>} />
-				<Route path="/doctors" element={<Doctors/>} />
+				<Route path="/doctors" element={<Doctors />} />
+				<Route path="/doctors/:docId" element={<DoctorProfile/>} />
             </Routes>
 		</div>
 
