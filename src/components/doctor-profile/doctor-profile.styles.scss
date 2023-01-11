@@ -1,5 +1,4 @@
 .doc-profile-container {
-	margin-top: 100px;
 	width: 1100px;
 	background-color: white;
 	border-radius: 10px;
@@ -8,16 +7,27 @@
 
 	.doc-profile-main-info {
 		margin: 50px;
+		margin-bottom: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 
 		.doc-profile-underline-main-info {
-			height: 150px;
-			width: 1000px;
+			padding-left: 20px;
+			height: 200px;
+			width: 950px;
 			display: flex;
 			align-items: center;
 			border-bottom: 1px solid #979DAC;
+		
+
+			.doc-profile-img-container {
+				margin-left: 40px;
+			}
 
 			.doc-profile-name {
-				margin-left: 50px;
+				margin-left: 80px;
 
 				h2 {
 					font-size: 20px;
@@ -36,7 +46,6 @@
 			.ratings-doc-profile {
 				display: flex;
 				align-items: center;
-				// padding-bottom: ;
 		
 				img {
 					width: 20px;
@@ -53,35 +62,34 @@
 						color: #979DAC;
 					}
 				}
-		
 			}
-
 		}
 
 		.doc-profile-underline-adresses {
-			height: 150px;
-			width: 1000px;
+			padding-left: 80px;
+			height: 200px;
+			width: 900px;
 			display: flex;
 			align-items: center;
-			justify-content: space-between;
+			justify-content: center;
 			border-bottom: 1px solid #979DAC;
 
 			.doc-profile-address {
+				width: 300px;
 				color: #01497C;
-				padding-right: 80px;
-				padding-left: 20px;
 				height: 85px;
 
 				h3 {
+					color: black;
 					font-weight: 600;
 					font-size: 12px;
 				}
 
 				.city {
 					color: black;
-					 span {
+					span {
 						color:#01497C;
-					 }
+					}
 				}
 
 				p {
@@ -100,8 +108,70 @@
 				}	
 			}
 		}
-	
+
+		.doc-profile-underline-speciality {
+			padding-left: 80px;
+			height: 200px;
+			width: 900px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-bottom: 1px solid #979DAC;
+
+			&:last-of-type {
+				border-bottom: none;
+			}
+
+
+			.doc-profile-speciality {
+				margin-top: 20px;
+				color: #01497C;
+				width: 300px;
+				height: 85px;
+				font-size: 12px;
+				align-self: center;
+
+				h3 {
+					color: black;
+					font-weight: 600;
+					
+				}
+
+				ul {
+					li {
+						padding: 0;
+					}
+				}
+			}
+
+		}
 	}
 
+	.profile-main-ratings-container {
+		color:#01497C;
+		width: 100%;
+		height: 80px;
+		background-color: #F6F6F6;
+		margin-bottom: 50px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		h3 {
+			font-weight: 500;
+			font-size: 18px;
+		}
+
+
+		.ratings-doc-profile {
+			display: flex;
+			align-items: center;
+
+			p {
+				margin-left: 5px;
+			}
+		}
+	}
 }
 

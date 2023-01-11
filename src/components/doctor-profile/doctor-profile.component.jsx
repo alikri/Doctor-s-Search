@@ -41,6 +41,55 @@ const DoctorProfile = () => {
 						<p className="doc-profile-phone"><span>Contact:</span> (400) 111-4000</p>
 					</div>
 				</div>
+				<div className="doc-profile-underline-speciality">
+				<div className="doc-profile-speciality">
+					<h3>Specialities:</h3>
+						<ul>
+							<li>Dermatologist</li>
+							<li>Pediatrics</li>
+						</ul>
+					</div>
+					<div className="doc-profile-speciality">
+						<h3>Gender:</h3>
+						<ul>
+							<li>Female</li>
+						</ul>
+					</div>
+					<div className="doc-profile-speciality">
+						<h3>Language Spoken:</h3>
+						<ul>
+							<li>English</li>
+							<li>French</li>
+						</ul>
+					</div>
+				</div>
+				<div className="doc-profile-underline-speciality">
+				<div className="doc-profile-speciality">
+					<h3>Education:</h3>
+						<ul>
+							<li>Harward University</li>
+						</ul>
+					</div>
+					<div className="doc-profile-speciality">
+						<h3>Hospital/Practice:</h3>
+						<ul>
+							<li>Derma Health</li>
+						</ul>
+					</div>
+					<div className="doc-profile-speciality">
+						<h3>Ownership:</h3>
+						<ul>
+							<li>Private</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div className="profile-main-ratings-container">
+					<h3>Reviews</h3>
+					<div className="ratings-doc-profile">
+							<img src={starProfile} alt="" />
+							<p> 4,8 <span>(100)</span></p>
+					</div>
 			</div>
 		</div>
 	)
