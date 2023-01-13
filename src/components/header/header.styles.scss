@@ -1,0 +1,46 @@
+
+.header {
+	background-color: #01497C;
+	margin-top: 10px;
+
+	.header-container {
+		max-width: 1100px;
+		height: 70px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: white;
+
+		.header-left{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+	
+			h2 {
+				margin-left: 10px;
+				font-family: 'Ultra', serif;
+				font-size: 20px;
+			}
+		}
+		.header-right{
+			display: flex;
+			justify-content: space-between;
+			position: relative;
+			cursor: pointer;
+		
+			span{
+				font-family: 'Barlow', sans-serif;
+				font-weight: 600;
+				cursor: pointer;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+		}
+	}
+
+	
+}
