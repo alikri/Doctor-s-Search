@@ -7,9 +7,52 @@ import { useState } from "react";
 
 const DoctorProfile = () => {
 	const [form, setForm] = useState(false);
-	const [textarea, setTextarea] = useState("")
+	const [textarea, setTextarea] = useState("");
+	const [ratingFromUser, setRatingFromUser] = useState(null);
+	const [userRating, setUserRating] = useState([
+		{
+			star: 1,
+			on: false
+		},
+		{
+			star: 2,
+			on: false
+		},
+		{
+			star: 3,
+			on: false
+		},
+		{
+			star: 4,
+			on: false
+		},
+		{
+			star: 5,
+			on: false
+		},
+		{
+			star: 6,
+			on: false
+		},
+	]);
+
+	const handleRatings = (e) => {
+		console.log(e);
+		if (e.target.tagName !== "IMG") return;
+		let current = e.target.id;
+		let currentN = current.split("")[current.length - 1];
+		setRatingFromUser(currentN);
+		let updatedState = userRating.map(item => {
+			if (item.star <= currentN) {
+				return {...item, on: true}
+			}
+			return {...item, on: false};
+		})
+		setUserRating(updatedState);
+	}
+
 	const { docId } = useParams();
-	console.log(textarea);
+
 	const handleAddReview = (e) => {
 		e.preventDefault();
 	}
@@ -21,7 +64,6 @@ const DoctorProfile = () => {
 
 	const handleReviewSubmit = () => {
 		setForm(false);
-		console.log("after submit")
 	}
 
 	return (
@@ -184,12 +226,12 @@ const DoctorProfile = () => {
 							</div>
 							<div className="user-info-container">
 								<h3>Mark Adams</h3>
-								<div className="star-container-review">
-									<button className="review-star"><img src={greyStar} alt="" /></button>
-									<button className="review-star"><img src={greyStar} alt="" /></button>
-									<button className="review-star"><img src={greyStar} alt="" /></button>
-									<button className="review-star"><img src={greyStar} alt="" /></button>
-									<button className="review-star"><img src={greyStar} alt="" /></button>
+								<div className="star-container-review" onClick={handleRatings}>
+									<button className="review-star"><img id="star1" src={userRating[0].on ? starProfile : greyStar} alt="" /></button>
+									<button className="review-star"><img id="star2" src={userRating[1].on ? starProfile : greyStar} alt="" /></button>
+									<button className="review-star"><img id="star3" src={userRating[2].on ? starProfile : greyStar} alt="" /></button>
+									<button className="review-star"><img id="star4" src={userRating[3].on ? starProfile : greyStar} alt="" /></button>
+									<button className="review-star"><img id="star5" src={userRating[4].on ? starProfile : greyStar} alt="" /></button>
 								</div>
 								<textarea value={textarea} onChange={handleTextareaChange} className="comments-input" type="textarea" placeholder="add your comment" />
 								<div className="submit-btn-container">
@@ -200,8 +242,37 @@ const DoctorProfile = () => {
 					</div>}
 				</div>
 			</div>
+			{/* <button>
+					<span className="rating-text no-low">No ratings</span>
+					<span id="star1" className={`${rating[0].on ? "on" : "off"} star`}>&#9733;</span>
+				</button>
+				<button>
+					<span className="rating-text no-low">Low Ratings</span>
+				
+					<span id="star2" className={`${rating[1].on ? "on" : "off"} star`}>&#9733;</span>
+				</button>
+				<button>
+					<span className="rating-text">3.0+</span>
+				
+					<span id="star3" className={`${rating[2].on ? "on" : "off"} star`}>&#9733;</span>
+				</button>
+				<button>
+					<span className="rating-text">3.5+</span>
+				
+					<span id="star4" className={`${rating[3].on ? "on" : "off"} star`}>&#9733;</span>
+				</button>
+				<button>
+					<span className="rating-text">4.0+</span>
+				
+					<span id="star5" className={`${rating[4].on ? "on" : "off"} star`}>&#9733;</span>
+				</button>
+				<button>
+					<span className="rating-text">4.5+</span>
+					<span id="star6" className={`${rating[5].on ? "on" : "off"} star`}>&#9733;</span>
+				</button> */}
 		</div>
 	)
 }
 
 export default DoctorProfile;
+
