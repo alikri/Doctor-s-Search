@@ -1,5 +1,5 @@
 import './app.styles.scss';
-import Home from './components/home /home.component';
+import Home from './components/home/home.component';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
 import Doctors from './components/doctors/doctors.component';
