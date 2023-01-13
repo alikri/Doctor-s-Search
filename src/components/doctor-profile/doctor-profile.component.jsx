@@ -1,10 +1,29 @@
 import "./doctor-profile.styles.scss";
 import docIcon from "../assets/preview-doc-icon.svg";
 import starProfile from "../assets/Star-doc-review.svg";
+import greyStar from "../assets/greyStar.svg";
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 const DoctorProfile = () => {
+	const [form, setForm] = useState(false);
+	const [textarea, setTextarea] = useState("")
 	const { docId } = useParams();
+	console.log(textarea);
+	const handleAddReview = (e) => {
+		e.preventDefault();
+	}
+
+	const handleTextareaChange = (e) => {
+		let input = e.target.value;
+		setTextarea(input);
+	}
+
+	const handleReviewSubmit = () => {
+		setForm(false);
+		console.log("after submit")
+	}
+
 	return (
 		<div className="doc-profile-container">
 			<div className="doc-profile-main-info">
@@ -23,7 +42,7 @@ const DoctorProfile = () => {
 				</div>
 				<div className="doc-profile-underline-adresses">
 					<div className="doc-profile-address">
-					<h3>Main location:</h3>
+						<h3>Main location:</h3>
 						<p>305 7th Ave, Fl 10</p>
 						<p className="city">New York, NY 10001 • <span>0.7 mi</span></p>
 						<p className="doc-profile-phone"><span>Contact:</span> (400) 453-4533</p>
@@ -42,8 +61,8 @@ const DoctorProfile = () => {
 					</div>
 				</div>
 				<div className="doc-profile-underline-speciality">
-				<div className="doc-profile-speciality">
-					<h3>Specialities:</h3>
+					<div className="doc-profile-speciality">
+						<h3>Specialities:</h3>
 						<ul>
 							<li>Dermatologist</li>
 							<li>Pediatrics</li>
@@ -64,8 +83,8 @@ const DoctorProfile = () => {
 					</div>
 				</div>
 				<div className="doc-profile-underline-speciality">
-				<div className="doc-profile-speciality">
-					<h3>Education:</h3>
+					<div className="doc-profile-speciality">
+						<h3>Education:</h3>
 						<ul>
 							<li>Harward University</li>
 						</ul>
@@ -85,11 +104,101 @@ const DoctorProfile = () => {
 				</div>
 			</div>
 			<div className="profile-main-ratings-container">
-					<h3>Reviews</h3>
-					<div className="ratings-doc-profile">
-							<img src={starProfile} alt="" />
-							<p> 4,8 <span>(100)</span></p>
+				<h3>Reviews</h3>
+				<div className="ratings-doc-profile">
+					<img src={starProfile} alt="" />
+					<p> 4,8 <span>(100)</span></p>
+				</div>
+			</div>
+			<div className="profile-reviews-container">
+				<div className="doc-review-container">
+					<div className="review-img-container">
+						<img src="https://via.placeholder.com/100" alt="" />
 					</div>
+					<div className="review-info-container">
+						<h3>Ariana Grande</h3>
+						<div className="star-container-review">
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<p>Nice doctor. I recommend.</p>
+						</div>
+					</div>
+				</div>
+				<div className="doc-review-container">
+					<div className="review-img-container">
+						<img src="https://via.placeholder.com/100" alt="" />
+					</div>
+					<div className="review-info-container">
+						<h3>Ariana Grande</h3>
+						<div className="star-container-review">
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<p>Nice doctor. I recommend.</p>
+						</div>
+					</div>
+				</div>
+				<div className="doc-review-container">
+					<div className="review-img-container">
+						<img src="https://via.placeholder.com/100" alt="" />
+					</div>
+					<div className="review-info-container">
+						<h3>Ariana Grande</h3>
+						<div className="star-container-review">
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<p>Nice doctor. I recommend.</p>
+						</div>
+					</div>
+				</div>
+				<div className="doc-review-container">
+					<div className="review-img-container">
+						<img src="https://via.placeholder.com/100" alt="" />
+					</div>
+					<div className="review-info-container">
+						<h3>Ariana Grande</h3>
+						<div className="star-container-review">
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<img src={starProfile} alt="" />
+							<p>Nice doctor. I recommend.</p>
+						</div>
+					</div>
+				</div>
+				<div className="add-review">
+					<button onClick={() => setForm(prevValue => !prevValue)}>Add a review</button>
+					{ form && <div className="add-review-form-container">
+						<form onClick={handleAddReview}>
+							<div className="user-img-container">
+								<img src="https://via.placeholder.com/100" alt="" />
+							</div>
+							<div className="user-info-container">
+								<h3>Mark Adams</h3>
+								<div className="star-container-review">
+									<button className="review-star"><img src={greyStar} alt="" /></button>
+									<button className="review-star"><img src={greyStar} alt="" /></button>
+									<button className="review-star"><img src={greyStar} alt="" /></button>
+									<button className="review-star"><img src={greyStar} alt="" /></button>
+									<button className="review-star"><img src={greyStar} alt="" /></button>
+								</div>
+								<textarea value={textarea} onChange={handleTextareaChange} className="comments-input" type="textarea" placeholder="add your comment" />
+								<div className="submit-btn-container">
+									<button onClick={handleReviewSubmit} type="submit">Submit</button>
+								</div>
+							</div>
+						</form>
+					</div>}
+				</div>
 			</div>
 		</div>
 	)
