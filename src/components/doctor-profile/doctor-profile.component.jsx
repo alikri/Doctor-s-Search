@@ -44,9 +44,9 @@ const DoctorProfile = () => {
 		setRatingFromUser(currentN);
 		let updatedState = userRating.map(item => {
 			if (item.star <= currentN) {
-				return {...item, on: true}
+				return { ...item, on: true }
 			}
-			return {...item, on: false};
+			return { ...item, on: false };
 		})
 		setUserRating(updatedState);
 	}
@@ -64,6 +64,13 @@ const DoctorProfile = () => {
 
 	const handleReviewSubmit = () => {
 		setForm(false);
+	}
+
+	const handleAddReviewDropdown = () => {
+		setForm(prevValue => !prevValue);
+		let updatedValue = userRating.map(item => ({ ...item, on: false }));
+		setUserRating(updatedValue);
+
 	}
 
 	return (
@@ -153,7 +160,73 @@ const DoctorProfile = () => {
 				</div>
 			</div>
 			<div className="profile-reviews-container">
-				<div className="doc-review-container">
+				<div className="all-reviews-container">
+					<div className="doc-review-container">
+						<div className="review-img-container">
+							<img src="https://via.placeholder.com/100" alt="" />
+						</div>
+						<div className="review-info-container">
+							<h3>Ariana Grande</h3>
+							<div className="star-container-review">
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<p>Nice doctor. I recommend.</p>
+							</div>
+						</div>
+					</div>
+					<div className="doc-review-container">
+						<div className="review-img-container">
+							<img src="https://via.placeholder.com/100" alt="" />
+						</div>
+						<div className="review-info-container">
+							<h3>Ariana Grande</h3>
+							<div className="star-container-review">
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<p>Nice doctor. I recommend.</p>
+							</div>
+						</div>
+					</div>
+					<div className="doc-review-container">
+						<div className="review-img-container">
+							<img src="https://via.placeholder.com/100" alt="" />
+						</div>
+						<div className="review-info-container">
+							<h3>Ariana Grande</h3>
+							<div className="star-container-review">
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<p>Nice doctor. I recommend.</p>
+							</div>
+						</div>
+					</div>
+					<div className="doc-review-container">
+						<div className="review-img-container">
+							<img src="https://via.placeholder.com/100" alt="" />
+						</div>
+						<div className="review-info-container">
+							<h3>Ariana Grande</h3>
+							<div className="star-container-review">
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<img src={starProfile} alt="" />
+								<p>Nice doctor. I recommend.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				{/* <div className="doc-review-container">
 					<div className="review-img-container">
 						<img src="https://via.placeholder.com/100" alt="" />
 					</div>
@@ -216,10 +289,10 @@ const DoctorProfile = () => {
 							<p>Nice doctor. I recommend.</p>
 						</div>
 					</div>
-				</div>
+				</div> */}
 				<div className="add-review">
-					<button onClick={() => setForm(prevValue => !prevValue)}>Add a review</button>
-					{ form && <div className="add-review-form-container">
+					<button onClick={handleAddReviewDropdown}>Add a review</button>
+					{form && <div className="add-review-form-container">
 						<form onClick={handleAddReview}>
 							<div className="user-img-container">
 								<img src="https://via.placeholder.com/100" alt="" />
@@ -242,34 +315,6 @@ const DoctorProfile = () => {
 					</div>}
 				</div>
 			</div>
-			{/* <button>
-					<span className="rating-text no-low">No ratings</span>
-					<span id="star1" className={`${rating[0].on ? "on" : "off"} star`}>&#9733;</span>
-				</button>
-				<button>
-					<span className="rating-text no-low">Low Ratings</span>
-				
-					<span id="star2" className={`${rating[1].on ? "on" : "off"} star`}>&#9733;</span>
-				</button>
-				<button>
-					<span className="rating-text">3.0+</span>
-				
-					<span id="star3" className={`${rating[2].on ? "on" : "off"} star`}>&#9733;</span>
-				</button>
-				<button>
-					<span className="rating-text">3.5+</span>
-				
-					<span id="star4" className={`${rating[3].on ? "on" : "off"} star`}>&#9733;</span>
-				</button>
-				<button>
-					<span className="rating-text">4.0+</span>
-				
-					<span id="star5" className={`${rating[4].on ? "on" : "off"} star`}>&#9733;</span>
-				</button>
-				<button>
-					<span className="rating-text">4.5+</span>
-					<span id="star6" className={`${rating[5].on ? "on" : "off"} star`}>&#9733;</span>
-				</button> */}
 		</div>
 	)
 }

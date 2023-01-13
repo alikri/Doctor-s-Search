@@ -176,35 +176,40 @@
 	}
 
 	.profile-reviews-container {
-		.doc-review-container {
-			display: flex;
-			margin: 50px;
-	
-			.review-img-container {
-				border-radius: 50%;
-				overflow: hidden;
-				margin-left: 80px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
+		max-height: 500px;
+		overflow: scroll;
 
-			.review-info-container {
-				margin-left: 20px;
-				color:#01497C;
-				font-weight: 500;
-				.star-container-review {
-					margin-top: 5px;
-					img {
-						width: 14px;
-						height: 14px;
-					}
+		.all-reviews-container {
+			.doc-review-container {
+				display: flex;
+				margin: 50px;
+		
+				.review-img-container {
+					border-radius: 50%;
+					overflow: hidden;
+					margin-left: 80px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
 				}
-				p {
-					font-weight: 300;
-					font-size: 12px;
-					margin: 0;
-					margin-block: 10px;
+	
+				.review-info-container {
+					margin-left: 20px;
+					color:#01497C;
+					font-weight: 500;
+					.star-container-review {
+						margin-top: 5px;
+						img {
+							width: 14px;
+							height: 14px;
+						}
+					}
+					p {
+						font-weight: 300;
+						font-size: 12px;
+						margin: 0;
+						margin-block: 10px;
+					}
 				}
 			}
 		}
