@@ -17,7 +17,10 @@ const Header = () => {
 					</Link>
 				</div>
 				<div className="header-right">
-					<span>Sign-in / Sign-up</span>
+					<Link to="/authorization"style={{ textDecoration: "none", color: "white" }}>
+						<span>Sign-in / Sign-up</span>
+					</Link>
+					
 				</div>
 			</div>
 		</div>
