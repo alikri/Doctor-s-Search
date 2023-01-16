@@ -23,6 +23,9 @@ const UserPage = () => {
 					</div>
 				</div>
 			</div>
+			<div className="user-doc-list-header">
+				<h2>List of  favorite doctors:</h2>
+			</div>
 		</div>
 	)
 }

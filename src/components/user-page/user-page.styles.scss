@@ -1,13 +1,16 @@
 .user-page-container {
 	width: 100%;
+	flex-direction: column;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 	.top-container {
+		width: 1100px;
 
 		.telemed-container {
 			margin: 20px 0;
+			padding-left: 10px;
 			color: #01497C;
 			font-weight: 600;
 
@@ -71,5 +74,21 @@
 			}
 		}
 	
+	}
+
+	.user-doc-list-header {
+		margin: 50px 0;
+		width: 1100px;
+		height: 60px;
+		background-color: white;
+		display: flex;
+		align-items: center;
+		padding-left: 20px;
+		border-radius: 10px;
+
+		h2 {
+			color: #01497C;
+			font-weight: 600;
+		}
 	}
 }
