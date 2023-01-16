@@ -1,0 +1,75 @@
+.user-page-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.top-container {
+
+		.telemed-container {
+			margin: 20px 0;
+			color: #01497C;
+			font-weight: 600;
+
+			a {
+				color: inherit;
+			}
+		}
+
+		.user-info-container{
+			margin-top: 50px;
+			display: flex;
+			width: 1000px;
+			justify-content: center;
+
+			.user-img {
+				margin-top: 20px;
+			}
+
+			.user-info {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+				margin-left: 80px;
+
+				h2 {
+					color: #01497C;
+					font-weight: 600;
+					font-size: 12px;
+					cursor: pointer;
+				}
+
+				.change-user-info {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					width: 300px;
+					margin: 5px 0;
+
+
+
+					input {
+						font-family: inherit;
+						color: #01497C;
+						font-weight: 600;
+						margin: 5px 0;
+						height: 25px;
+						border: none;
+						border-radius: 5px;
+						padding-left: 10px;
+
+						&::placeholder {
+							font-size: 11px;
+							font-weight: 300;
+						}
+
+						&:nth-of-type(2) {
+							margin-bottom: 30px;
+						}
+					}
+				}
+			}
+		}
+	
+	}
+}

@@ -1,6 +1,6 @@
 import "./authorization.styles.scss";
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 const Authorization = () => {
 
 	const [logInForm, setLogInForm] = useState({
@@ -17,17 +17,20 @@ const Authorization = () => {
 		insurancePlan: ""
 	})
 
-	console.log("log in from below");
-	console.log(logInForm);
-	console.log("sign-up form below");
-	console.log(signUpForm);
+	// console.log("log in from below");
+	// console.log(logInForm);
+	// console.log("sign-up form below");
+	// console.log(signUpForm);
 
 	const handleLogIn = (e) => {
 		e.preventDefault();
+        // submitToApi(formData);
+		console.log("submit data below");
+		console.log(logInForm);
 		setLogInForm({
 			email: "",
 			password: ""
-		});
+		})
 		
 	}
 	const handleSignUp = (e) => {
@@ -60,12 +63,10 @@ const Authorization = () => {
             }
         })
 	}
-
-
 	return (
 		<div className="auth-main-container">
 			<div className="log-in-container">
-				<form className="log-in-form">
+				<form onSubmit={handleLogIn} className="log-in-form">
 					<h3>Log-in</h3>
 					<input
 						value={logInForm.email}
@@ -81,14 +82,22 @@ const Authorization = () => {
 						placeholder="Password"
 						name="password"
 					/>
-					<button
-						onClick={handleLogIn}
-						type="submit">Log-in</button>
+					
+						<button
+							onClick={handleLogIn}
+							type="submit">
+						<Link
+							to="/authorization/user"
+							style={{ textDecoration: "none", color: "#014F86" }}
+						>
+							<span>Log-in</span></Link>
+						</button>
+					
 					<button>Log-in with Google</button>
 				</form>
 			</div>
 			<div className="sign-up-container">
-				<form onClick={handleSignUp} className="sign-up-form">
+				<form onSubmit={handleSignUp} className="sign-up-form">
 					<h3>Sign-up</h3>
 					<input
 						value={signUpForm.firstName}
