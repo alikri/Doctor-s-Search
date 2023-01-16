@@ -10,6 +10,7 @@ import { FilterLanguageProvider } from './components/context/filter-language-con
 import { FilterGenderProvider } from './components/context/filter-gender-context';
 import { FilterInsuranceProvider } from './components/context/filter-insurance-context';
 import { FilterDistanceProvider } from './components/context/filter-distance-context';
+import { FavoritedDocsProvider } from './components/context/favorited-doctors-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -22,9 +23,9 @@ root.render(
 						<FilterGenderProvider>
 							<FilterInsuranceProvider>
 								<FilterDistanceProvider>
-									<App />
-									
-
+									<FavoritedDocsProvider>
+										<App />
+									</FavoritedDocsProvider>
 								</FilterDistanceProvider>
 							</FilterInsuranceProvider>
 						</FilterGenderProvider>

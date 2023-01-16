@@ -1,13 +1,14 @@
 import "./doctors.styles.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useLocation } from 'react-router-dom';
 import DoctorPreview from "../doctor-preview/doctor-preview.component";
+import { ContextFavoritedDocs } from "../context/favorited-doctors-context";
 import loop from "../assets/loopToSearch.svg";
 import AsideFilters from "../aside-filters/aside-filters.component";
 import loader from "../assets/icons8-iphone-spinner.gif";
 
 const Doctors = () => {
-
+	const {favoriteDoc, addFavoriteDocs} = useContext(ContextFavoritedDocs);
 	const location = useLocation();
 	const { zipcodeMain, docSearchMainPage } = location.state;
 	const [doctors, setDoctors] = useState(null);
@@ -50,6 +51,10 @@ const Doctors = () => {
 		setAsideFilters(prevValue => !prevValue);
 	}
 
+	const handleListOfFavorited = (e) => {
+		let targetId = e.target.offsetParent.offsetParent.id;
+		addFavoriteDocs(targetId);
+	}
 
 
 	const doctorList = filteredDocs && filteredDocs.map(doc => <DoctorPreview
@@ -66,6 +71,7 @@ const Doctors = () => {
 		mainLocation={doc.mainLocation}
 		additionalLocations={doc.additionalLocations}
 		networkStatus={doc.networkStatus}
+		handleListOfFavorited={handleListOfFavorited}
 	/>)
 
 	return (

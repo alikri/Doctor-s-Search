@@ -10,21 +10,17 @@ import { useState } from "react";
 const DoctorPreview = (props) => {
 
 	const [favorite, setFavorite] = useState(false);
-	const [favoriteDoc, setFavoritedDoc] = useState(null);
-
-	const { name, gender, specialization, hospital, zipcode, languageSpoken, ratings, networkStatus, mainLocation, id } = props;
+	const { name, gender, specialization, hospital, zipcode, languageSpoken, ratings, networkStatus, mainLocation, id, handleListOfFavorited} = props;
 
 	const handleFavorite = (e) => {
-		console.log(e.target.offsetParent.offsetParent.id);
 		setFavorite(prevValue => !prevValue);
-		let targetId = e.target.offsetParent.offsetParent.id;
 	}
 
 	const languageSpokenList = languageSpoken.map(lang => <li key={lang}>{lang}</li>);
 
 	return (
 		<div className="doc-preview-container" id={id}>
-			<div className="favorite-btn"><img onClick={handleFavorite} src={favorite ? redHeart : emptyHeart} alt="" /></div>
+			<div className="favorite-btn"><img onClick={(e) => [handleFavorite(e), handleListOfFavorited(e)]} src={favorite ? redHeart : emptyHeart} alt="" /></div>
 			<div className="doc-img-container-docp">
 				<img src={docsIcon} alt="" />
 				<div className="network-container-docp"> 
