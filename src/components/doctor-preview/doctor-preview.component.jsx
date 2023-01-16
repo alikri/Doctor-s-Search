@@ -2,16 +2,29 @@ import "./doctor-preview.styles.scss";
 import star from "../assets/Star-doc-review.svg";
 import docsIcon from "../assets/preview-doc-icon.svg";
 import network from "../assets/network.svg";
+import emptyHeart from "../assets/empty-heart.svg";
+import redHeart from "../assets/red-heart.svg";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const DoctorPreview = (props) => {
 
+	const [favorite, setFavorite] = useState(false);
+	const [favoriteDoc, setFavoritedDoc] = useState(null);
+
 	const { name, gender, specialization, hospital, zipcode, languageSpoken, ratings, networkStatus, mainLocation, id } = props;
 
-	const languageSpokenList = languageSpoken.map(lang => <li key={lang}>{lang}</li>)
+	const handleFavorite = (e) => {
+		console.log(e.target.offsetParent.offsetParent.id);
+		setFavorite(prevValue => !prevValue);
+		let targetId = e.target.offsetParent.offsetParent.id;
+	}
+
+	const languageSpokenList = languageSpoken.map(lang => <li key={lang}>{lang}</li>);
 
 	return (
-		<div className="doc-preview-container">
+		<div className="doc-preview-container" id={id}>
+			<div className="favorite-btn"><img onClick={handleFavorite} src={favorite ? redHeart : emptyHeart} alt="" /></div>
 			<div className="doc-img-container-docp">
 				<img src={docsIcon} alt="" />
 				<div className="network-container-docp"> 
