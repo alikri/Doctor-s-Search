@@ -36,11 +36,18 @@
 				margin-left: 80px;
 
 				h2 {
+					padding-right: 5px;
 					color: #01497C;
 					font-weight: 600;
 					font-size: 12px;
 					cursor: pointer;
+					transition: all .2s linear;
+
+					&:hover {
+						text-decoration: underline;
+					}
 				}
+
 
 				.change-user-info {
 					display: flex;
