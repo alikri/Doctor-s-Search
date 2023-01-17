@@ -142,9 +142,15 @@
 					
 				}
 
+				.doc-profile-language {
+					overflow: scroll;
+					max-height: 80px;
+				}
+
 				ul {
 					li {
 						padding: 0;
+						margin: 0;
 					}
 				}
 			}

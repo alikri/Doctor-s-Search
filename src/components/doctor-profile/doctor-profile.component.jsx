@@ -149,7 +149,9 @@ const DoctorProfile = () => {
 					</div>
 					<div className="doc-profile-speciality">
 						<h3>Language Spoken:</h3>
-						{languageSpoken}
+							<div className="doc-profile-language">
+							{languageSpoken}
+						</div>
 					</div>
 				</div>
 				<div className="doc-profile-underline-speciality">
