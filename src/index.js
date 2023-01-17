@@ -11,6 +11,7 @@ import { FilterGenderProvider } from './components/context/filter-gender-context
 import { FilterInsuranceProvider } from './components/context/filter-insurance-context';
 import { FilterDistanceProvider } from './components/context/filter-distance-context';
 import { FavoritedDocsProvider } from './components/context/favorited-doctors-context';
+import { DoctorsProvider } from './components/context/doctors-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -24,7 +25,9 @@ root.render(
 							<FilterInsuranceProvider>
 								<FilterDistanceProvider>
 									<FavoritedDocsProvider>
-										<App />
+										<DoctorsProvider>
+											<App />
+										</DoctorsProvider>
 									</FavoritedDocsProvider>
 								</FilterDistanceProvider>
 							</FilterInsuranceProvider>
