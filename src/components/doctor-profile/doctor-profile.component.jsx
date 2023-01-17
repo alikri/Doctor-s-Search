@@ -2,11 +2,14 @@ import "./doctor-profile.styles.scss";
 import docIcon from "../assets/preview-doc-icon.svg";
 import starProfile from "../assets/Star-doc-review.svg";
 import greyStar from "../assets/greyStar.svg";
+import loader from "../assets/icons8-iphone-spinner.gif";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const DoctorProfile = () => {
 	const [form, setForm] = useState(false);
+	const [doctors, setDoctors] = useState(null);
+	const [docToDisplay, setDocToDisplay] = useState(null);
 	const [textarea, setTextarea] = useState("");
 	const [ratingFromUser, setRatingFromUser] = useState(null);
 	const [userRating, setUserRating] = useState([
@@ -35,7 +38,8 @@ const DoctorProfile = () => {
 			on: false
 		},
 	]);
-
+	console.log("doc to display");
+	console.log(docToDisplay);
 	const handleRatings = (e) => {
 		console.log(e);
 		if (e.target.tagName !== "IMG") return;
@@ -52,6 +56,19 @@ const DoctorProfile = () => {
 	}
 
 	const { docId } = useParams();
+	// console.log(docId);
+
+	useEffect(() => {
+		fetch("https://woyllyhb24txpvnuetgcn4lgw40pgmbc.lambda-url.eu-central-1.on.aws/?page=1&pageSize=30")
+			.then(response => response.json())
+			.then(doc => displayDoc(doc.results));
+	}, []);
+
+	const displayDoc = (allDoctors) => {
+		let id = docId;
+		let filteredDoc = allDoctors.filter(doc => doc.id === id);
+		setDocToDisplay(filteredDoc[0]);
+	}
 
 	const handleAddReview = (e) => {
 		e.preventDefault();
@@ -73,18 +90,34 @@ const DoctorProfile = () => {
 
 	}
 
+	const additionalLocations = docToDisplay && docToDisplay.additionalLocations.map(location =>
+		<div key={location} className="doc-profile-address">
+			<h3>Additional Location:</h3>
+			<p>{location}</p>
+			<p className="city">New York, NY 10001 • <span>0.7 mi</span></p>
+			<p className="doc-profile-phone"><span>Contact:</span> (400) 453-4533</p>
+		</div>
+	)
+
+	const languageSpoken = docToDisplay && docToDisplay.languageSpoken.map(language => 
+		<ul>
+			<li>{language}</li>
+		</ul>
+		)
+
 	return (
-		<div className="doc-profile-container">
+		<> {docToDisplay ? 
+			<div className="doc-profile-container">
 			<div className="doc-profile-main-info">
 				<div className="doc-profile-underline-main-info">
 					<div className="doc-profile-img-container">
 						<img src={docIcon} alt="" />
 					</div>
 					<div className="doc-profile-name">
-						<h2>Marry Hill. MD</h2>
+							<h2>{docToDisplay.name}</h2>
 						<div className="ratings-doc-profile">
 							<img src={starProfile} alt="" />
-							<p>4,8 <span>(100)</span></p>
+							<p>{docToDisplay.ratings.rating} <span>({docToDisplay.ratings.number})</span></p>
 						</div>
 						<p>Dermatologist</p>
 					</div>
@@ -92,43 +125,28 @@ const DoctorProfile = () => {
 				<div className="doc-profile-underline-adresses">
 					<div className="doc-profile-address">
 						<h3>Main location:</h3>
-						<p>305 7th Ave, Fl 10</p>
+						<p>{docToDisplay.mainLocation}</p>
 						<p className="city">New York, NY 10001 • <span>0.7 mi</span></p>
 						<p className="doc-profile-phone"><span>Contact:</span> (400) 453-4533</p>
 					</div>
-					<div className="doc-profile-address">
-						<h3>Additional location:</h3>
-						<p>45 8th Ave</p>
-						<p className="city">New York, NY 10001 • <span>0.12 mi</span></p>
-						<p className="doc-profile-phone"><span>Contact:</span> (400) 422-4533</p>
-					</div>
-					<div className="doc-profile-address">
-						<h3>Additional location:</h3>
-						<p>12 10th Ave</p>
-						<p className="city">New York, NY 10091• <span>2 mi</span></p>
-						<p className="doc-profile-phone"><span>Contact:</span> (400) 111-4000</p>
-					</div>
+					{additionalLocations}	
 				</div>
 				<div className="doc-profile-underline-speciality">
 					<div className="doc-profile-speciality">
 						<h3>Specialities:</h3>
 						<ul>
-							<li>Dermatologist</li>
-							<li>Pediatrics</li>
+							<li>{docToDisplay.specialization}</li>
 						</ul>
 					</div>
 					<div className="doc-profile-speciality">
 						<h3>Gender:</h3>
 						<ul>
-							<li>Female</li>
+							<li>{docToDisplay.gender}</li>
 						</ul>
 					</div>
 					<div className="doc-profile-speciality">
 						<h3>Language Spoken:</h3>
-						<ul>
-							<li>English</li>
-							<li>French</li>
-						</ul>
+						{languageSpoken}
 					</div>
 				</div>
 				<div className="doc-profile-underline-speciality">
@@ -141,7 +159,7 @@ const DoctorProfile = () => {
 					<div className="doc-profile-speciality">
 						<h3>Hospital/Practice:</h3>
 						<ul>
-							<li>Derma Health</li>
+							<li>{docToDisplay.hospital}</li>
 						</ul>
 					</div>
 					<div className="doc-profile-speciality">
@@ -226,70 +244,6 @@ const DoctorProfile = () => {
 						</div>
 					</div>
 				</div>
-				{/* <div className="doc-review-container">
-					<div className="review-img-container">
-						<img src="https://via.placeholder.com/100" alt="" />
-					</div>
-					<div className="review-info-container">
-						<h3>Ariana Grande</h3>
-						<div className="star-container-review">
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<p>Nice doctor. I recommend.</p>
-						</div>
-					</div>
-				</div>
-				<div className="doc-review-container">
-					<div className="review-img-container">
-						<img src="https://via.placeholder.com/100" alt="" />
-					</div>
-					<div className="review-info-container">
-						<h3>Ariana Grande</h3>
-						<div className="star-container-review">
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<p>Nice doctor. I recommend.</p>
-						</div>
-					</div>
-				</div>
-				<div className="doc-review-container">
-					<div className="review-img-container">
-						<img src="https://via.placeholder.com/100" alt="" />
-					</div>
-					<div className="review-info-container">
-						<h3>Ariana Grande</h3>
-						<div className="star-container-review">
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<p>Nice doctor. I recommend.</p>
-						</div>
-					</div>
-				</div>
-				<div className="doc-review-container">
-					<div className="review-img-container">
-						<img src="https://via.placeholder.com/100" alt="" />
-					</div>
-					<div className="review-info-container">
-						<h3>Ariana Grande</h3>
-						<div className="star-container-review">
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<img src={starProfile} alt="" />
-							<p>Nice doctor. I recommend.</p>
-						</div>
-					</div>
-				</div> */}
 				<div className="add-review">
 					<button onClick={handleAddReviewDropdown}>Add a review</button>
 					{form && <div className="add-review-form-container">
@@ -316,6 +270,10 @@ const DoctorProfile = () => {
 				</div>
 			</div>
 		</div>
+		: <div className="doc-profile-loader"><img src={loader} alt="" /></div> }
+		
+	</>
+		
 	)
 }
 

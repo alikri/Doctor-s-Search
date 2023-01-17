@@ -19,6 +19,7 @@ const Doctors = () => {
 
 
 	useEffect(() => {
+
 		fetch("https://woyllyhb24txpvnuetgcn4lgw40pgmbc.lambda-url.eu-central-1.on.aws/?page=1&pageSize=30")
 			.then(response => response.json())
 			.then(data => setDoctors(data.results))
