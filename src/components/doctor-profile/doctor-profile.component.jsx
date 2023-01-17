@@ -115,10 +115,13 @@ const DoctorProfile = () => {
 					</div>
 					<div className="doc-profile-name">
 							<h2>{docToDisplay.name}</h2>
-						<div className="ratings-doc-profile">
-							<img src={starProfile} alt="" />
-							<p>{docToDisplay.ratings.rating} <span>({docToDisplay.ratings.number})</span></p>
-						</div>
+							<a href="#reviews">
+							<div className="ratings-doc-profile">
+								<img src={starProfile} alt="" />
+								<p>{docToDisplay.ratings.rating} <span>({docToDisplay.ratings.number})</span></p>
+							</div>
+							</a>
+							
 						<p>Dermatologist</p>
 					</div>
 				</div>
@@ -180,7 +183,7 @@ const DoctorProfile = () => {
 			<div className="profile-reviews-container">
 				<div className="all-reviews-container">
 					<div className="doc-review-container">
-						<div className="review-img-container">
+						<div id="reviews" className="review-img-container">
 							<img src="https://via.placeholder.com/100" alt="" />
 						</div>
 						<div className="review-info-container">

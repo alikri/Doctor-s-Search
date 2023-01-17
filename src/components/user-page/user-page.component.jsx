@@ -1,8 +1,13 @@
 import "./user-page.styles.scss";
 import whitePlaceholder from "../assets/user-pic-placeholder.png";
-import { useState } from "react";
+import { ContextFavoritedDocs } from "../context/favorited-doctors-context";
+import { useState, useContext } from "react";
+import DoctorPreview from "../doctor-preview/doctor-preview.component";
 
 const UserPage = () => {
+	const { favoriteDoc, addFavoriteDocs } = useContext(ContextFavoritedDocs);
+	console.log("favoriteDoc user profile");
+	console.log(favoriteDoc);
 	const [edit, setEdit] = useState(false);
 	const [userDataSavedByUser, setUserDataSavedByUser] = useState({
 		userFisrtName: "",
