@@ -1,14 +1,15 @@
 import "./user-page.styles.scss";
 import whitePlaceholder from "../assets/user-pic-placeholder.png";
 import { ContextFavoritedDocs } from "../context/favorited-doctors-context";
-import { useState, useContext } from "react";
+import { ContextDoctors } from "../context/doctors-context";
+import { useState, useContext, useEffect } from "react";
 import DoctorPreview from "../doctor-preview/doctor-preview.component";
 
 const UserPage = () => {
 	const { favoriteDoc, addFavoriteDocs } = useContext(ContextFavoritedDocs);
-	console.log("favoriteDoc user profile");
-	console.log(favoriteDoc);
+	const { doctors } = useContext(ContextDoctors);
 	const [edit, setEdit] = useState(false);
+	const [displayFavoriteDoctors, setDisplayFavoriteDoctors] = useState(null);
 	const [userDataSavedByUser, setUserDataSavedByUser] = useState({
 		userFisrtName: "",
 		userLastName: "",
@@ -17,8 +18,19 @@ const UserPage = () => {
 		userEmail: "",
 		userCurrentPassword: "",
 		userUpdatePassword: ""
-	})
-	console.log(userDataSavedByUser);
+	});
+
+	useEffect(() => {
+		if (!doctors) return;
+		console.log("favorite doc amd doctors");
+		console.log(favoriteDoc);
+		console.log(doctors);
+		let favorited = doctors.filter(doc => favoriteDoc.includes(doc.id))
+		setDisplayFavoriteDoctors(favorited);
+		console.log("favorite docs after filtering");
+		console.log(displayFavoriteDoctors);
+
+	}, [])
 
 	const handleEditBtn = () => {
 		setEdit(prevValue => !prevValue);
@@ -31,6 +43,27 @@ const UserPage = () => {
             }
         })
 	}
+	const handleListOfFavorited = (e) => {
+		let targetId = e.target.offsetParent.offsetParent.id;
+		
+	}
+
+	const doctorsFavoriteList = displayFavoriteDoctors && displayFavoriteDoctors.map(doc => <DoctorPreview
+		key={doc.id}
+		id={doc.id}
+		name={doc.name}
+		ratings={doc.ratings}
+		specialization={doc.specialization}
+		zipcode={doc.zipcode}
+		hospital={doc.hospital}
+		insuranceAccepted={doc.insuranceAccepted}
+		gender={doc.gender}
+		languageSpoken={doc.languageSpoken}
+		mainLocation={doc.mainLocation}
+		additionalLocations={doc.additionalLocations}
+		networkStatus={doc.networkStatus}
+		handleListOfFavorited={handleListOfFavorited}
+	/>)
 
 	return (
 		<div className="user-page-container">
@@ -61,6 +94,7 @@ const UserPage = () => {
 			<div className="user-doc-list-header">
 				<h2>List of  favorite doctors:</h2>
 			</div>
+			{doctorsFavoriteList}
 		</div>
 	)
 }

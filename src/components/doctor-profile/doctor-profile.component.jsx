@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 
 const DoctorProfile = () => {
 	const [form, setForm] = useState(false);
-	const [doctors, setDoctors] = useState(null);
 	const [docToDisplay, setDocToDisplay] = useState(null);
 	const [textarea, setTextarea] = useState("");
 	const [ratingFromUser, setRatingFromUser] = useState(null);
@@ -38,10 +37,16 @@ const DoctorProfile = () => {
 			on: false
 		},
 	]);
-	console.log("doc to display");
-	console.log(docToDisplay);
+	
+	const { docId } = useParams();
+
+	useEffect(() => {
+		fetch(`https://juzz51gsf7.execute-api.eu-central-1.amazonaws.com/dev/doctors/${docId}`)
+			.then(response => response.json())
+			.then(doc => setDocToDisplay(doc));
+	}, []);
+
 	const handleRatings = (e) => {
-		console.log(e);
 		if (e.target.tagName !== "IMG") return;
 		let current = e.target.id;
 		let currentN = current.split("")[current.length - 1];
@@ -53,21 +58,6 @@ const DoctorProfile = () => {
 			return { ...item, on: false };
 		})
 		setUserRating(updatedState);
-	}
-
-	const { docId } = useParams();
-	// console.log(docId);
-
-	useEffect(() => {
-		fetch("https://woyllyhb24txpvnuetgcn4lgw40pgmbc.lambda-url.eu-central-1.on.aws/?page=1&pageSize=30")
-			.then(response => response.json())
-			.then(doc => displayDoc(doc.results));
-	}, []);
-
-	const displayDoc = (allDoctors) => {
-		let id = docId;
-		let filteredDoc = allDoctors.filter(doc => doc.id === id);
-		setDocToDisplay(filteredDoc[0]);
 	}
 
 	const handleAddReview = (e) => {
@@ -99,8 +89,8 @@ const DoctorProfile = () => {
 		</div>
 	)
 
-	const languageSpoken = docToDisplay && docToDisplay.languageSpoken.map(language => 
-		<ul>
+	const languageSpoken = docToDisplay && docToDisplay.languageSpoken.map((language,index) => 
+		<ul key={index}>
 			<li>{language}</li>
 		</ul>
 		)

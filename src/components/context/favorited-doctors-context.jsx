@@ -5,7 +5,7 @@ const ContextFavoritedDocs = createContext();
 const FavoritedDocsProvider = ({ children }) => {
 
 	const [favoriteDoc, setFavoritedDoc] = useState([]);
-	console.log(favoriteDoc);
+
 
 	const addFavoriteDocs = (id) => {
 		if (favoriteDoc == null) {
@@ -14,8 +14,8 @@ const FavoritedDocsProvider = ({ children }) => {
 			setFavoritedDoc(prevValue => [...prevValue, id])
 		}
 	}
-	console.log("context favDocs id")
-	console.log(favoriteDoc);
+	
+	
 
 	return (
 		<ContextFavoritedDocs.Provider value={{favoriteDoc, addFavoriteDocs}}>

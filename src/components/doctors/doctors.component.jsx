@@ -14,20 +14,11 @@ const Doctors = () => {
 
 	const {favoriteDoc, addFavoriteDocs} = useContext(ContextFavoritedDocs);
 	const location = useLocation();
-	const { zipcodeMain, docSearchMainPage } = location.state;
-	// const [doctors, setDoctors] = useState(null);
+	const { zipcodeMain, docSearchMainPage } = location.state
 	const [docSearchField, setDocSearchFiel] = useState(docSearchMainPage);
 	const [filteredDocs, setFilteredDocs] = useState(doctors);
 	const [zipcode, setZipcode] = useState(zipcodeMain);
 	const [asideFilters, setAsideFilters] = useState(false);
-
-
-	// useEffect(() => {
-	// 	fetch("https://woyllyhb24txpvnuetgcn4lgw40pgmbc.lambda-url.eu-central-1.on.aws/?page=1&pageSize=30")
-	// 		.then(response => response.json())
-	// 		.then(data => setDoctors(data.results))
-	// 		.catch(err => alert("Server issue.", err));
-	// }, []);
 
 	useEffect(() => {
 		const filteredSearch = doctors && doctors.filter(
