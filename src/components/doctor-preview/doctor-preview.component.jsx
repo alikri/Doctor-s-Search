@@ -5,22 +5,21 @@ import network from "../assets/network.svg";
 import emptyHeart from "../assets/empty-heart.svg";
 import redHeart from "../assets/red-heart.svg";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext } from "react";
+import { ContextFavoritedDocs } from "../context/favorited-doctors-context";
 
 const DoctorPreview = (props) => {
 
-	const [favorite, setFavorite] = useState(false);
-	const { name, gender, specialization, hospital, zipcode, languageSpoken, ratings, networkStatus, mainLocation, id, handleListOfFavorited} = props;
-
-	const handleFavorite = (e) => {
-		setFavorite(prevValue => !prevValue);
-	}
+	const { addFavoriteDocs } = useContext(ContextFavoritedDocs);
+	const { name, gender, specialization, hospital, zipcode, languageSpoken, ratings, networkStatus, mainLocation, id, favoriteDoc} = props;
+	
+	
 
 	const languageSpokenList = languageSpoken.map(lang => <li key={lang}>{lang}</li>);
 
 	return (
 		<div className="doc-preview-container" id={id}>
-			<div className="favorite-btn"><img onClick={(e) => [handleFavorite(e), handleListOfFavorited(e)]} src={favorite ? redHeart : emptyHeart} alt="" /></div>
+			<div className="favorite-btn"><img onClick={(e) => [addFavoriteDocs(e)]} src={favoriteDoc ? redHeart : emptyHeart} alt="" /></div>
 			<div className="doc-img-container-docp">
 				<img src={docsIcon} alt="" />
 				<div className="network-container-docp"> 

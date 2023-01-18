@@ -3,7 +3,7 @@ import { createContext, useState, useEffect } from "react";
 const ContextDoctors = createContext();
 
 const DoctorsProvider = ({ children }) => {
-	
+
 	const [doctors, setDoctors] = useState(null);
 	
 

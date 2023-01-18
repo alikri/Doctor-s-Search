@@ -6,7 +6,7 @@ import { useState, useContext, useEffect } from "react";
 import DoctorPreview from "../doctor-preview/doctor-preview.component";
 
 const UserPage = () => {
-	const { favoriteDoc, addFavoriteDocs } = useContext(ContextFavoritedDocs);
+	const { favoriteDoc} = useContext(ContextFavoritedDocs);
 	const { doctors } = useContext(ContextDoctors);
 	const [edit, setEdit] = useState(false);
 	const [displayFavoriteDoctors, setDisplayFavoriteDoctors] = useState(null);
@@ -22,14 +22,8 @@ const UserPage = () => {
 
 	useEffect(() => {
 		if (!doctors) return;
-		console.log("favorite doc amd doctors");
-		console.log(favoriteDoc);
-		console.log(doctors);
 		let favorited = doctors.filter(doc => favoriteDoc.includes(doc.id))
 		setDisplayFavoriteDoctors(favorited);
-		console.log("favorite docs after filtering");
-		console.log(displayFavoriteDoctors);
-
 	}, [])
 
 	const handleEditBtn = () => {
@@ -42,10 +36,6 @@ const UserPage = () => {
                 [e.target.name]: e.target.value
             }
         })
-	}
-	const handleListOfFavorited = (e) => {
-		let targetId = e.target.offsetParent.offsetParent.id;
-		
 	}
 
 	const doctorsFavoriteList = displayFavoriteDoctors && displayFavoriteDoctors.map(doc => <DoctorPreview
@@ -62,7 +52,7 @@ const UserPage = () => {
 		mainLocation={doc.mainLocation}
 		additionalLocations={doc.additionalLocations}
 		networkStatus={doc.networkStatus}
-		handleListOfFavorited={handleListOfFavorited}
+		favoriteDoc={favoriteDoc.includes(doc.id)}
 	/>)
 
 	return (

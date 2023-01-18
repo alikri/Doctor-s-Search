@@ -12,7 +12,7 @@ const Doctors = () => {
 
 	const { doctors } = useContext(ContextDoctors);
 
-	const {favoriteDoc, addFavoriteDocs} = useContext(ContextFavoritedDocs);
+	const {favoriteDoc} = useContext(ContextFavoritedDocs);
 	const location = useLocation();
 	const { zipcodeMain, docSearchMainPage } = location.state
 	const [docSearchField, setDocSearchFiel] = useState(docSearchMainPage);
@@ -45,13 +45,7 @@ const Doctors = () => {
 	const handleSideFiltersOpenning = () => {
 		setAsideFilters(prevValue => !prevValue);
 	}
-
-	const handleListOfFavorited = (e) => {
-		let targetId = e.target.offsetParent.offsetParent.id;
-		addFavoriteDocs(targetId);
-	}
-
-
+	
 	const doctorList = filteredDocs && filteredDocs.map(doc => <DoctorPreview
 		key={doc.id}
 		id={doc.id}
@@ -66,7 +60,7 @@ const Doctors = () => {
 		mainLocation={doc.mainLocation}
 		additionalLocations={doc.additionalLocations}
 		networkStatus={doc.networkStatus}
-		handleListOfFavorited={handleListOfFavorited}
+		favoriteDoc={favoriteDoc.includes(doc.id)}
 	/>)
 
 	return (
