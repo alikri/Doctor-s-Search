@@ -5,7 +5,8 @@ import LanguageFilter from "../language-filter-main/language-main.component";
 import GenderFilter from "../gender-filter-main/gender-main.component";
 import InsuranceFilter from "../insurance-filter-main/insurance-main.component";
 import DistanceFilter from "../distance-filter-main/distance-main.component";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 
 const FilterNav = () => {
 	const [isOpen1, setIsOpen1] = useState(false);
@@ -14,10 +15,49 @@ const FilterNav = () => {
 	const [isOpen4, setIsOpen4] = useState(false);
 	const [isOpen5, setIsOpen5] = useState(false);
 	const [isOpen6, setIsOpen6] = useState(false);
+	const [openFilterBtn, setOpenFilterBtn] = useState(false);
+	const [width, setWidth] = useState(window.innerWidth);
+	const isSmall = width < 768;
+
+	console.log("width");
+	console.log(width);
+	
+	useEffect(() => {
+		function handleResize() {
+			setWidth(window.innerWidth);
+		}
+		
+
+
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
+	const myFunc = () => {
+		if (isSmall && openFilterBtn) {
+			return {
+				display: "block"
+			}
+		} else if (!isSmall) {
+			return {
+				display: "grid"
+			}
+		}
+		return {
+			display: "none"
+		}
+	}
+	
+	const handleMainPageFilterBtn = () => {
+		setOpenFilterBtn(prevValue => !prevValue)
+	}
 	
 	return (
 		<div className="filter-container">
-
+			<div className="main-filter-btn" onClick={handleMainPageFilterBtn}>
+					<button>Filter Options</button>
+			</div>
+			<div className="div-drop-container" style={myFunc()}>
 			<div className="div-drop" onMouseEnter={() => setIsOpen1(true)} onMouseLeave={() => setIsOpen1(false)}>
 				<button className="dropdown-btn" >
 					Hospital
@@ -53,6 +93,7 @@ const FilterNav = () => {
 					Distance
 				</button>
 				{isOpen6 && <DistanceFilter />}
+			</div>
 			</div>
 		</div>
 	)
