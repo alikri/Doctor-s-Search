@@ -1,9 +1,6 @@
 .ratings-container {
 	padding: 10px 0;
 	background: white;
-	max-height: 300px;
-	overflow: scroll;
-	max-width: fit-content;
 	position: absolute;
 	top: 40px;
 	left: -140px;
@@ -39,14 +36,57 @@
 				font-size: 12px;
 				width: 70px;
 			}
-		  }
-		  .on {
+		}
+		.on {
 			color: #EEA230;
-		  }
-		  .off {
+		}
+		.off {
 			color: #ccc;
-		  }
+		}
 	}
 
+	@media (max-width: 768px) {
+		overflow: hidden;
+		scroll: none;
+		left: 110px;
+		top: -18px;
+		width: fit-content;
+		height: 58px;
+		align-items: center;
+
+		.star-container {
+	
+			margin: 5px 10px;
+			button {
+				height: 50px;
+				margin: 0;
+			}
+
+		}
+	}
+	@media (max-width: 480px) {
+		top: -60px;
+		width: 120px;
+		height: fit-content;
+
+		.star-container {
+			width: 100px;
+			flex-direction: column;
+		}
+	}
 	
 }
+
+// @media (max-width: 1182px) {
+		
+// }
+// @media (max-width: 991px) {
+	
+// }
+// @media (max-width: 768px) {
+	
+// }
+
+// @media (max-width: 480px) {
+	
+// }
