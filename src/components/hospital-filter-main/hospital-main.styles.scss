@@ -48,6 +48,7 @@
 		}
 	}
 
+
 	@media (max-width: 991px) {
 		height: 200px;
 		width: 230px;
@@ -76,9 +77,28 @@
 			}
 		}
 	}
+	@media (max-width: 1182px) {
+		left: -70px;
+	}
+	 @media (max-width: 991px) {
+		left: -30px;
+	}
+
 	@media (max-width: 768px) {
 		left: 110px;
 		top: -35px;
+	}
+	@media (max-width: 480px) {
+		height: 200px;
+		width: 200px;
+
+		.hospital-input-container {
+
+			.filter-hospital {
+				height: 18px;
+				width: 160px;
+			}
+		}
 	}
 
 }
