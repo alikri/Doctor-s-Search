@@ -2,21 +2,14 @@
 	overflow: scroll;
 	background-repeat: no-repeat;
 	background-position: 50% 0;
-	background-size: cover;
-	height: 85%;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
 
 
-	// @media (max-width: 1182px) {
-		
-// }
-// @media (max-width: 991px) {
-	
-// }
-@media (max-width: 768px) {
+@media (max-width: 768px) and (max-height: 959px){
 	padding-left: 10px;
 	align-items: flex-start;
 }
