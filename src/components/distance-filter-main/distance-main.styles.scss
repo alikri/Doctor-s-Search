@@ -19,6 +19,40 @@
 		display: flex;
 		align-items: center;
 	}
+	@media (max-width: 1182px) {
+		left: -100px;
+	}
+@media (max-width: 991px) {
+	width: 200px;
+	input {
+		width: 100px;
+	}
+}
+@media (max-width: 768px) {
+	left: 110px;
+	top: -27px;
+	width: 200px;
+	heigth: 100px;
+}
+
+@media (max-width: 480px) {
+	left: 105px;
+	width: 180px;
+	font-size: 10px;
+}
 
 
 }
+// @media (max-width: 1182px) {
+		
+// }
+// @media (max-width: 991px) {
+	
+// }
+// @media (max-width: 768px) {
+	
+// }
+
+// @media (max-width: 480px) {
+	
+// }

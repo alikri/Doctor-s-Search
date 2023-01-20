@@ -59,4 +59,55 @@
 			}
 		}
 	}
+	@media (max-width: 991px) {
+		height: 200px;
+		width: 300px;
+		left: -100px;
+
+		.filter-insurance {
+			margin-left: 20px;
+			height: 20px;
+			width: 250px;
+		}
+		ul {
+			padding-left: 20px;
+			li {
+				font-size: 14px;
+			}
+		}
+
+	}
+	@media (max-width: 768px) {
+		left: 110px;
+		top: -100px;
+		width: 200px;
+		height: 150px;
+
+		.filter-insurance {
+			margin-left: 8px;
+			height: 20px;
+			width: 180px;
+		}
+		ul {
+			
+			li {
+				font-size: 12px;
+			}
+		}
+		
+	}
+	@media (max-width: 480px) {
+		left: 105px;
+		width: 180px;
+
+		.filter-insurance {
+			width: 160px;
+		}
+		ul {
+			padding-left: 10px;
+			li {
+				font-size: 12px;
+			}
+		}
+	}
 }

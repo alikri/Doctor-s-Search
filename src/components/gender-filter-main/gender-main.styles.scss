@@ -23,4 +23,37 @@
 			}
 		}
 	}
+	@media (max-width: 1182px) {
+		
+	}
+	@media (max-width: 991px) {
+		left: -40px;
+		width: 200px;
+		ul {
+			padding-left: 40px;
+			li {
+				font-size: 14px;
+			}
+		}
+	}
+	@media (max-width: 768px) {
+		left: 110px;
+		top: -25px;
+		ul {
+			padding-left: 20px;
+				
+			li {
+				padding: 1px 5px;
+				transition: all .1s linear;
+				font-size: 12px;
+			}
+		}
+	}
+
+	@media (max-width: 480px) {
+		left: 105px;
+		width: 180px;
+		
+	}
 }
+

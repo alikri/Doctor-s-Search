@@ -48,19 +48,42 @@
 		}
 	}
 
-
+	@media (max-width: 1182px) {
+		left: -70px;
+	}
 	@media (max-width: 991px) {
+		left: -60px;
 		height: 200px;
-		width: 230px;
-		left: -40px;
+		width: 250px;
 
 		.hospital-input-container {
+			text-align: center;
 
 			.filter-hospital {
 				height: 20px;
 				width: 200px;
 			}
 		}
+		ul {
+			padding-left: 20px;
+			li {
+				font-size: 14px;
+			}
+		}
+		
+	}
+
+	@media (max-width: 768px) {
+		padding: 0;
+		left: 110px;
+		top: 0;
+		height: 150px;
+
+		.hospital-input-container {
+			padding-top: 10px;
+		}
+
+
 		ul {
 			padding-left: 20px;
 			li {
@@ -77,21 +100,10 @@
 			}
 		}
 	}
-	@media (max-width: 1182px) {
-		left: -70px;
-	}
-	@media (max-width: 991px) {
-		left: -30px;
-	}
-
-	@media (max-width: 768px) {
-		left: 110px;
-		top: -35px;
-	}
 	@media (max-width: 480px) {
 		left: 105px;
-		height: 200px;
-		width: 200px;
+		height: 150px;
+		width: 180px;
 
 		.hospital-input-container {
 
