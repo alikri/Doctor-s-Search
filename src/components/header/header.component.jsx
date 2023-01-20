@@ -1,5 +1,5 @@
 import "./header.styles.scss";
-import docIcon from "../assets/doc-icon.svg";
+import docIcon from "../../assets/doc-icon.svg";
 import { Link } from "react-router-dom";
 
 

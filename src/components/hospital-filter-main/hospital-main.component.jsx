@@ -1,6 +1,6 @@
 import "./hospital-main.styles.scss"
 import { useContext } from "react";
-import crossClose from "../assets/cross-close.svg"
+import crossClose from "../../assets/cross-close.svg"
 import { ContextHospital } from "../context/filter-hospital-context";
 
 const HospitalFilter = (props) => {

@@ -1,6 +1,6 @@
 import "./insurance-filter-aside.styles.scss";
 import { ContextInsurance } from "../context/filter-insurance-context";
-import crossClose from "../assets/cross-close.svg"
+import crossClose from "../../assets/cross-close.svg";
 import { useContext } from "react";
 
 const InsuranceFilterAside = () => {
