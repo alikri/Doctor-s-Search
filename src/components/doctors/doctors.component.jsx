@@ -4,9 +4,9 @@ import { useLocation } from 'react-router-dom';
 import DoctorPreview from "../doctor-preview/doctor-preview.component";
 import { ContextFavoritedDocs } from "../context/favorited-doctors-context";
 import { ContextDoctors } from "../context/doctors-context";
-import loop from "../assets/loopToSearch.svg";
+import loop from "../assets/loop-to-search.svg";
 import AsideFilters from "../aside-filters/aside-filters.component";
-import loader from "../assets/icons8-iphone-spinner.gif";
+import loader from "../assets/icon-spinner.gif";
 
 const Doctors = () => {
 

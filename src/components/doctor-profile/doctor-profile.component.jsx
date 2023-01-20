@@ -1,8 +1,8 @@
 import "./doctor-profile.styles.scss";
 import docIcon from "../assets/preview-doc-icon.svg";
-import starProfile from "../assets/Star-doc-review.svg";
-import greyStar from "../assets/greyStar.svg";
-import loader from "../assets/icons8-iphone-spinner.gif";
+import starProfile from "../assets/star-doc-review.svg";
+import greyStar from "../assets/grey-star.svg";
+import loader from "../assets/icon-spinner.gif";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 

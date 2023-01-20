@@ -1,5 +1,5 @@
 import "./searchBar.styles.scss";
-import { ReactComponent as LoopSvg } from "../assets/loopToSearch.svg"
+import { ReactComponent as LoopSvg } from "../assets/loop-to-search.svg";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 

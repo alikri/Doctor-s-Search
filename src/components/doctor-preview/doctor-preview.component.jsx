@@ -1,5 +1,5 @@
 import "./doctor-preview.styles.scss";
-import star from "../assets/Star-doc-review.svg";
+import star from "../assets/star-doc-review.svg";
 import docsIcon from "../assets/preview-doc-icon.svg";
 import network from "../assets/network.svg";
 import emptyHeart from "../assets/empty-heart.svg";
