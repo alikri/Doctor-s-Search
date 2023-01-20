@@ -1,9 +1,9 @@
 import "./doctor-preview.styles.scss";
-import star from "../../assets/star-doc-review.svg";
-import docsIcon from "../../assets/preview-doc-icon.svg";
-import network from "../../assets/network.svg";
-import emptyHeart from "../../assets/empty-heart.svg";
-import redHeart from "../../assets/red-heart.svg";
+import star from "../../assets/icons/star-doc-review.svg";
+import docsIcon from "../../assets/icons/preview-doc-icon.svg";
+import network from "../../assets/icons/network.svg";
+import emptyHeart from "../../assets/icons/empty-heart.svg";
+import redHeart from "../../assets/icons/red-heart.svg";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ContextFavoritedDocs } from "../context/favorited-doctors-context";

@@ -1,5 +1,5 @@
 import "./language-main.styles.scss";
-import crossClose from "../../assets/cross-close.svg";
+import crossClose from "../../assets/icons/cross-close.svg";
 import { useContext } from "react";
 import { ContextLanguage } from "../context/filter-language-context";
 

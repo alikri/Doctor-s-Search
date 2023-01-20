@@ -1,5 +1,5 @@
 import "./user-page.styles.scss";
-import whitePlaceholder from "../../assets/user-pic-placeholder.png";
+import whitePlaceholder from "../../assets/icons/user-pic-placeholder.png";
 import { ContextFavoritedDocs } from "../context/favorited-doctors-context";
 import { ContextDoctors } from "../context/doctors-context";
 import { useState, useContext, useEffect } from "react";
