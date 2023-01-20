@@ -1,7 +1,7 @@
 import "./language-main.styles.scss";
 import crossClose from "../../assets/icons/cross-close.svg";
 import { useContext } from "react";
-import { ContextLanguage } from "../context/filter-language-context";
+import { ContextLanguage } from "../../context/filter-language-context";
 
 const LanguageFilter = () => {
 	const { language, chosenLanguage, handleLanguageSelection, removeChosenLanguage } = useContext(ContextLanguage);

@@ -1,7 +1,7 @@
 import "./hospital-filter.aside.styles.scss";
 import { useContext } from "react";
 import crossClose from "../../assets/icons/cross-close.svg";
-import { ContextHospital } from "../context/filter-hospital-context";
+import { ContextHospital } from "../../context/filter-hospital-context";
 
 const HospitalFilterAside = () => {
 

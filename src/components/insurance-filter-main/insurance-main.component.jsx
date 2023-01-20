@@ -1,5 +1,5 @@
 import "./insurance-main.styles.scss";
-import { ContextInsurance } from "../context/filter-insurance-context";
+import { ContextInsurance } from "../../context/filter-insurance-context";
 import crossClose from "../../assets/icons/cross-close.svg";
 import { useContext } from "react";
 

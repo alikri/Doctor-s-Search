@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState} from "react";
-import facilities from "../../hospitals-data";
+import facilities from "../hospitals-data";
 
 const ContextHospital = createContext();
 

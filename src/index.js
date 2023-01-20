@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from "react-router-dom";
-import { FilterHospitalProvider } from './components/context/filter-hospital-context';
-import { FilterRatingsProvider } from './components/context/filter-ratings-context';
-import { FilterLanguageProvider } from './components/context/filter-language-context';
-import { FilterGenderProvider } from './components/context/filter-gender-context';
-import { FilterInsuranceProvider } from './components/context/filter-insurance-context';
-import { FilterDistanceProvider } from './components/context/filter-distance-context';
-import { FavoritedDocsProvider } from './components/context/favorited-doctors-context';
-import { DoctorsProvider } from './components/context/doctors-context';
+import { FilterHospitalProvider } from './context/filter-hospital-context';
+import { FilterRatingsProvider } from './context/filter-ratings-context';
+import { FilterLanguageProvider } from './context/filter-language-context';
+import { FilterGenderProvider } from './context/filter-gender-context';
+import { FilterInsuranceProvider } from './context/filter-insurance-context';
+import { FilterDistanceProvider } from './context/filter-distance-context';
+import { FavoritedDocsProvider } from './context/favorited-doctors-context';
+import { DoctorsProvider } from './context/doctors-context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

@@ -1,6 +1,6 @@
 import "./distance-main.styles.scss";
 import { useContext } from "react";
-import { ContextDistance } from "../context/filter-distance-context";
+import { ContextDistance } from "../../context/filter-distance-context";
 
 const DistanceFilter = () => {
 

@@ -1,7 +1,7 @@
 import "./gender-main.styles.scss";
 import crossClose from "../../assets/icons/cross-close.svg";
 import { useContext } from "react";
-import { ContextGender } from "../context/filter-gender-context";
+import { ContextGender } from "../../context/filter-gender-context";
 
 const GenderFilter = () => {
 

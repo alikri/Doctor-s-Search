@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState} from "react";
-import insuranceData from "../../insurance-data";
+import insuranceData from "../insurance-data";
 
 const ContextInsurance = createContext();
 

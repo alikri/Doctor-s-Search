@@ -1,7 +1,7 @@
 import "./gender-filter-aside.styles.scss";
 import crossClose from "../../assets/icons/cross-close.svg";
 import { useContext } from "react";
-import { ContextGender } from "../context/filter-gender-context";
+import { ContextGender } from "../../context/filter-gender-context";
 
 const GenderFilterAside = () => {
 	const {chosenGender, removeChosenGender, handleGenderSelection} = useContext(ContextGender);

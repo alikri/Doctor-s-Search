@@ -6,7 +6,7 @@ import emptyHeart from "../../assets/icons/empty-heart.svg";
 import redHeart from "../../assets/icons/red-heart.svg";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { ContextFavoritedDocs } from "../context/favorited-doctors-context";
+import { ContextFavoritedDocs } from "../../context/favorited-doctors-context";
 
 const DoctorPreview = (props) => {
 

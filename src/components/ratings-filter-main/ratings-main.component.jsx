@@ -1,6 +1,6 @@
 import "./ratings-main.styles.scss";
 import { useContext } from "react";
-import { ContextRatings } from "../context/filter-ratings-context";
+import { ContextRatings } from "../../context/filter-ratings-context";
 
 const RatingsFilter = () => {
 
