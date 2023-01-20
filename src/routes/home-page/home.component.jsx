@@ -1,10 +1,10 @@
 import "./home.styles.scss";
 import image from "../../assets/icons/home-background.png";
-import SearchBar from "../search bar/searchBar.component";
-import FilterNav from "../filter-nav/filter-nav.component";
-import Doctors from "../doctors/doctors.component";
-import DoctorProfile from "../doctor-profile/doctor-profile.component";
-import Authorization from "../authorization/authorization.component";
+import SearchBar from "../../components/search-bar/searchBar.component";
+import FilterNav from "../../components/filter-nav/filter-nav.component";
+import Doctors from "../doctors-page/doctors.component";
+import DoctorProfile from "../doctor-profile-page/doctor-profile.component";
+import Authorization from "../authorization-page/authorization.component";
 import UserPage from "../user-page/user-page.component";
 
 import { Routes, Route } from "react-router-dom";

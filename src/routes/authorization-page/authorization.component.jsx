@@ -17,11 +17,6 @@ const Authorization = () => {
 		insurancePlan: ""
 	})
 
-	// console.log("log in from below");
-	// console.log(logInForm);
-	// console.log("sign-up form below");
-	// console.log(signUpForm);
-
 	const handleLogIn = (e) => {
 		e.preventDefault();
         // submitToApi(formData);

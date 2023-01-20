@@ -3,7 +3,7 @@ import whitePlaceholder from "../../assets/icons/user-pic-placeholder.png";
 import { ContextFavoritedDocs } from "../../context/favorited-doctors-context";
 import { ContextDoctors } from "../../context/doctors-context";
 import { useState, useContext, useEffect } from "react";
-import DoctorPreview from "../doctor-preview/doctor-preview.component";
+import DoctorPreview from "../../components/doctor-preview/doctor-preview.component";
 
 const UserPage = () => {
 	const { favoriteDoc} = useContext(ContextFavoritedDocs);
