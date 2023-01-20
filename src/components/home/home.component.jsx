@@ -4,7 +4,7 @@ import SearchBar from "../search bar/searchBar.component";
 import FilterNav from "../filter-nav/filter-nav.component";
 import Doctors from "../doctors/doctors.component";
 import DoctorProfile from "../doctor-profile/doctor-profile.component";
-import Authorization from "../authorization page/authorization.component";
+import Authorization from "../authorization/authorization.component";
 import UserPage from "../user-page/user-page.component";
 
 import { Routes, Route } from "react-router-dom";
