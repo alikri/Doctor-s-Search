@@ -1,6 +1,15 @@
 import "./authorization.styles.scss";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+// import { Amplify, Auth } from 'aws-amplify';
+// import { withAuthenticator } from '@aws-amplify/ui-react';
+// import '@aws-amplify/ui-react/styles.css';
+// import awsconfig from '../../amplify-config';
+import { signUpUser, signInUser } from "../../utils/aws-amplify/aws-amplify";
+
+// Amplify.configure(awsconfig);
+
+
 const Authorization = () => {
 
 	const [logInForm, setLogInForm] = useState({
@@ -19,7 +28,9 @@ const Authorization = () => {
 
 	const handleLogIn = (e) => {
 		e.preventDefault();
-        // submitToApi(formData);
+		
+		signInUser(logInForm.email, logInForm.password)
+
 		console.log("submit data below");
 		console.log(logInForm);
 		setLogInForm({
@@ -30,6 +41,20 @@ const Authorization = () => {
 	}
 	const handleSignUp = (e) => {
 		e.preventDefault();
+
+		if (signUpForm.password !== signUpForm.confirmPassword) {
+			alert("Password does not match");
+			return;
+		}
+
+		signUpUser(
+			signUpForm.email,
+			signUpForm.password,
+			signUpForm.firstName,
+			signUpForm.lastName,
+			signUpForm.insurance,
+			signUpForm.insurancePlan);
+		
 		setSignUpForm({
 			firstName: "",
 			lastName: "",
@@ -79,11 +104,11 @@ const Authorization = () => {
 					/>
 					
 						<button
-							onClick={handleLogIn}
 							type="submit">
 						<Link
 							to="/authorization/user"
 							style={{ textDecoration: "none", color: "#014F86" }}
+							onClick={handleLogIn}
 						>
 							<span>Log-in</span></Link>
 						</button>
@@ -91,6 +116,8 @@ const Authorization = () => {
 					<button>Log-in with Google</button>
 				</form>
 			</div>
+				{/* <h1>Hello {user.username}</h1>
+			<button onClick={signOut}>Sign out</button> */}
 			<div className="sign-up-container">
 				<form onSubmit={handleSignUp} className="sign-up-form">
 					<h3>Sign-up</h3>
