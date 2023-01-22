@@ -12,9 +12,9 @@ import { FilterInsuranceProvider } from './context/filter-insurance-context';
 import { FilterDistanceProvider } from './context/filter-distance-context';
 import { FavoritedDocsProvider } from './context/favorited-doctors-context';
 import { DoctorsProvider } from './context/doctors-context';
-// import { Amplify } from 'aws-amplify';
-// import awsExports from './aws-exports';
-// Amplify.configure(awsExports);
+import { Amplify } from 'aws-amplify';
+import config from './amplify-config';
+Amplify.configure(config);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

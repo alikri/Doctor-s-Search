@@ -7,10 +7,12 @@ import DoctorProfile from "../doctor-profile-page/doctor-profile.component";
 import Authorization from "../authorization-page/authorization.component";
 import UserPage from "../user-page/user-page.component";
 
+
 import { Routes, Route } from "react-router-dom";
 
-const Home = () => {
-
+const Home = ({ user }) => {
+	console.log("user");
+	console.log(user)
 	const myStyles = {
 		backgroundImage: `url(${image})`,
 	}
@@ -21,7 +23,7 @@ const Home = () => {
 				<Route path="/doctors" element={<Doctors />} />
 				<Route path="/doctors/:docId" element={<DoctorProfile />} />
 				<Route path="/authorization" element={<Authorization />} />
-				<Route path="/authorization/user" element={<UserPage />} />
+				{/* <Route path="/authorization/user" element={<UserPage />} /> */}
             </Routes>
 		</div>
 

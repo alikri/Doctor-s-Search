@@ -18,9 +18,6 @@ const FilterNav = () => {
 	const [openFilterBtn, setOpenFilterBtn] = useState(false);
 	const [width, setWidth] = useState(window.innerWidth);
 	const isSmall = width < 768;
-
-	console.log("width");
-	console.log(width);
 	
 	useEffect(() => {
 		function handleResize() {

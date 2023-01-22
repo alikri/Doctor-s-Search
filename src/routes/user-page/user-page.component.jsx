@@ -4,8 +4,9 @@ import { ContextFavoritedDocs } from "../../context/favorited-doctors-context";
 import { ContextDoctors } from "../../context/doctors-context";
 import { useState, useContext, useEffect } from "react";
 import DoctorPreview from "../../components/doctor-preview/doctor-preview.component";
+import { Link } from "react-router-dom";
 
-const UserPage = () => {
+const UserPage = (props) => {
 	const { favoriteDoc} = useContext(ContextFavoritedDocs);
 	const { doctors } = useContext(ContextDoctors);
 	const [edit, setEdit] = useState(false);
@@ -15,7 +16,7 @@ const UserPage = () => {
 		userLastName: "",
 		userInsurance: "",
 		userInsurancePlan: "",
-		userEmail: "",
+		userEmail: `${props.username}`,
 		userCurrentPassword: "",
 		userUpdatePassword: ""
 	});
@@ -61,6 +62,9 @@ const UserPage = () => {
 				<div className="telemed-container">
 					<h3>To schedule online consultation click <a href="https://www.teladochealth.com/">here</a></h3>
 				</div>
+				<Link to="/" style={{ textDecoration: "none", color: "white" }} >
+						<button onClick={props.signOut}>Sign Out</button>
+					</Link>
 				<div className="user-info-container">
 					<div className="user-img">
 						<img src={whitePlaceholder} alt="" width="150px" height="150px"/>

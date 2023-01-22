@@ -8,10 +8,9 @@ import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
 
 
-
+	// Amplify.configure(awsconfig);
 
 function App() {
-	// Amplify.configure(awsconfig);
 	return (
 		<div className='main-content'>
 			{/* <h1>Hello {user.username}</h1>
