@@ -5,6 +5,7 @@ import { ContextDoctors } from "../../context/doctors-context";
 import { useState, useContext, useEffect } from "react";
 import DoctorPreview from "../../components/doctor-preview/doctor-preview.component";
 import { Link } from "react-router-dom";
+import { ContextUser } from "../../context/user.context";
 
 const UserPage = (props) => {
 	const { favoriteDoc} = useContext(ContextFavoritedDocs);
@@ -20,11 +21,14 @@ const UserPage = (props) => {
 		userCurrentPassword: "",
 		userUpdatePassword: ""
 	});
+	const { authorized } = useContext(ContextUser);
 
 	useEffect(() => {
 		if (!doctors) return;
 		let favorited = doctors.filter(doc => favoriteDoc.includes(doc.id))
 		setDisplayFavoriteDoctors(favorited);
+
+		authorized(props.username);
 	}, [])
 
 	const handleEditBtn = () => {
@@ -62,9 +66,9 @@ const UserPage = (props) => {
 				<div className="telemed-container">
 					<h3>To schedule online consultation click <a href="https://www.teladochealth.com/">here</a></h3>
 				</div>
-				<Link to="/" style={{ textDecoration: "none", color: "white" }} >
+				{/* <Link to="/" style={{ textDecoration: "none", color: "white" }} >
 						<button onClick={props.signOut}>Sign Out</button>
-					</Link>
+					</Link> */}
 				<div className="user-info-container">
 					<div className="user-img">
 						<img src={whitePlaceholder} alt="" width="150px" height="150px"/>

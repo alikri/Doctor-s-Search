@@ -17,9 +17,6 @@ const FavoritedDocsProvider = ({ children }) => {
 			setFavoritedDoc(favoritedUpdated);
 		}
 	}
-	
-	console.log("favorited");
-	console.log(favoriteDoc);
 
 	return (
 		<ContextFavoritedDocs.Provider value={{favoriteDoc, addFavoriteDocs}}>

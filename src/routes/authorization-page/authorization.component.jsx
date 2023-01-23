@@ -5,6 +5,8 @@ import { withAuthenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsconfig from '../../amplify-config';
 import UserPage from "../user-page/user-page.component";
+import { useContext } from "react";
+import { ContextUser } from "../../context/user.context";
 
 
 Amplify.configure(awsconfig);
@@ -12,7 +14,7 @@ Amplify.configure(awsconfig);
 const Authorization = ({ signOut, user }) => {
 	return (
 		<div className="auth-main-container">
-			<UserPage username={user.username} signOut={signOut} />
+			<UserPage user={user} username={user.username} signOut={signOut} />
 		</div>
 	)
 }

@@ -12,6 +12,7 @@ import { FilterInsuranceProvider } from './context/filter-insurance-context';
 import { FilterDistanceProvider } from './context/filter-distance-context';
 import { FavoritedDocsProvider } from './context/favorited-doctors-context';
 import { DoctorsProvider } from './context/doctors-context';
+import { UserProvider } from './context/user.context';
 import { Amplify } from 'aws-amplify';
 import config from './amplify-config';
 Amplify.configure(config);
@@ -29,7 +30,9 @@ root.render(
 								<FilterDistanceProvider>
 									<FavoritedDocsProvider>
 										<DoctorsProvider>
-											<App />
+											<UserProvider>
+												<App />
+											</UserProvider>
 										</DoctorsProvider>
 									</FavoritedDocsProvider>
 								</FilterDistanceProvider>

@@ -5,14 +5,26 @@ import FilterNav from "../../components/filter-nav/filter-nav.component";
 import Doctors from "../doctors-page/doctors.component";
 import DoctorProfile from "../doctor-profile-page/doctor-profile.component";
 import Authorization from "../authorization-page/authorization.component";
-import UserPage from "../user-page/user-page.component";
-
+// import UserPage from "../user-page/user-page.component";
+import { Auth } from 'aws-amplify';
 
 import { Routes, Route } from "react-router-dom";
 
-const Home = ({ user }) => {
-	console.log("user");
-	console.log(user)
+const Home = () => {
+	// Auth.currentSession()
+	// 	.then((data) => console.log(data))
+	// 	.catch((err) => console.log(err));
+	
+
+	// console.log("----")
+	// const a = async () => {
+	// 	const { attributes } = await Auth.currentAuthenticatedUser();
+	// 	console.log(attributes);
+	// 	console.log(attributes.sub);
+	// }
+
+	// a();
+	
 	const myStyles = {
 		backgroundImage: `url(${image})`,
 	}
