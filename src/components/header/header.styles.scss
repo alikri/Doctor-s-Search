@@ -30,6 +30,18 @@
 			justify-content: space-between;
 			position: relative;
 			cursor: pointer;
+
+			.my-profile-btn {
+				margin-right: 30px;
+				background: none;
+				border: none;
+				color: white;
+				font-family: 'Barlow', sans-serif;
+				font-weight: 600;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
 		
 			span{
 				font-family: 'Barlow', sans-serif;

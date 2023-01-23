@@ -1,6 +1,6 @@
 import "./header.styles.scss";
 import docIcon from "../../assets/icons/doc-icon.svg";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Auth } from 'aws-amplify';
 import { ContextUser } from "../../context/user.context";
 import { useEffect, useState, useContext } from "react";
@@ -35,6 +35,10 @@ const Header = () => {
 					</Link>
 				</div>
 				<div className="header-right">
+					{currentUser && <Link
+						to={`/authorization/${currentUser}`}
+						style={{ textDecoration: "none", color: "white" }}
+					><button className="my-profile-btn">My Profile</button></Link>}
 					{currentUser ?
 						<Link
 						to="/"

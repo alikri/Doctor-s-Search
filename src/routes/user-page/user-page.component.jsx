@@ -22,7 +22,7 @@ const UserPage = (props) => {
 		userUpdatePassword: ""
 	});
 	const { authorized } = useContext(ContextUser);
-
+	
 
 	useEffect(() => {
 		if (!doctors) return;
