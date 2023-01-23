@@ -4,7 +4,7 @@ import { ContextFavoritedDocs } from "../../context/favorited-doctors-context";
 import { ContextDoctors } from "../../context/doctors-context";
 import { useState, useContext, useEffect } from "react";
 import DoctorPreview from "../../components/doctor-preview/doctor-preview.component";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ContextUser } from "../../context/user.context";
 
 const UserPage = (props) => {
@@ -22,6 +22,7 @@ const UserPage = (props) => {
 		userUpdatePassword: ""
 	});
 	const { authorized } = useContext(ContextUser);
+
 
 	useEffect(() => {
 		if (!doctors) return;

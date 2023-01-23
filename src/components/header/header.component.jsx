@@ -7,30 +7,22 @@ import { useEffect, useState, useContext } from "react";
 
 
 const Header = () => {
-	const [render, setRender] = useState(0);
-	const [userFromContext, setUserFromContext] = useState(null);
 	const [currentUser, setCurrentUser] = useState(null);
-	const { user } = useContext(ContextUser);
-	console.log("render");
-	console.log(render);
+	const { user, authorized } = useContext(ContextUser);
+
 	useEffect(() => {
 		Auth.currentSession()
 		.then((data) => setCurrentUser(data.accessToken.payload.client_id))
 			.catch((err) => console.log(err));
-		if (currentUser) {
-			setRender(prevValue => prevValue + 1)
-		}
-	}, [user])
+	}, [currentUser, user])
 
 	const handleUserAuth = () => {
-		setRender((prevValue => prevValue + 1))
-		if (currentUser) {
-			setCurrentUser(false);
-			Auth.signOut();
-		} 
+		if (!currentUser) return;
+		Auth.signOut()
+			.then((data) => setCurrentUser(data));
+		authorized(currentUser);
 	}
-	console.log("current user")
-	console.log(currentUser);
+
 	return (
 		<div className="header">
 			<div className="header-container">
@@ -46,8 +38,8 @@ const Header = () => {
 					{currentUser ?
 						<Link
 						to="/"
-						style={{ textDecoration: "none", color: "white" }}
-						onClick={handleUserAuth}
+							style={{ textDecoration: "none", color: "white" }}
+							onClick={handleUserAuth}
 					><span>Sign Out</span>
 						</Link> :
 						<Link
