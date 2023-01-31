@@ -152,6 +152,49 @@
 
 		}
 	}
+	@media (max-width: 1462px) {
+		.doc-list-filter-container {
+			z-index: 200;
+			left: 100px;
+
+			button {
+				width: 110px;
+
+				&:hover {
+					background-color: transparent;
+					box-shadow: none;
+					font-size: 15px;
+				}
+			}
+		}
+	}
+	@media (max-width: 1182px) {
+		.doc-list-filter-container {
+			left: 60px;
+		}
+
+		.doc-list-aside-left {
+			position: absolute;
+			z-index: 100;
+			width: 100%;
+			background-color: rgba(19, 18, 18, 0.287);;
+			margin-right: 0;
+			display: flex;
+			border-radius: 0;
+			.aside {
+				box-shadow: none;
+				margin: 0;
+				
+				h2 {
+					background-color: white;
+					padding-left: 15px;
+					margin-bottom: 0;
+					padding-block: 10px;
+				}
+			}
+		}
+	}
+
 
 }
 

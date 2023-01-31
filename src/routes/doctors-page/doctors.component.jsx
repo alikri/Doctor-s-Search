@@ -19,6 +19,17 @@ const Doctors = () => {
 	const [filteredDocs, setFilteredDocs] = useState(doctors);
 	const [zipcode, setZipcode] = useState(zipcodeMain);
 	const [asideFilters, setAsideFilters] = useState(false);
+	const [width, setWidth] = useState(window.innerWidth);
+	const isSmall = width < 1462;
+	
+	useEffect(() => {
+		function handleResize() {
+			setWidth(window.innerWidth);
+		}
+		
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
 
 	useEffect(() => {
 		const filteredSearch = doctors && doctors.filter(
@@ -62,9 +73,11 @@ const Doctors = () => {
 		networkStatus={doc.networkStatus}
 		favoriteDoc={favoriteDoc.includes(doc.id)}
 	/>)
+	
+	let removePadding = isSmall && asideFilters;
 
 	return (
-		<div className="doc-list-page-container">
+		<div className="doc-list-page-container" style={{"paddingTop": removePadding && "0px"}}>
 			{asideFilters && <div className="doc-list-aside-left" >
 				{<AsideFilters />}
 			</div>}
@@ -72,8 +85,8 @@ const Doctors = () => {
 				<div className="doc-list-filter-container">
 					<button
 						onClick={handleSideFiltersOpenning}
-						style={{width: asideFilters && "350px"}}
-					>Filter Options</button>
+						style={{width: asideFilters && "110px"}}
+					>{asideFilters ? "Hide Filters" : "Filter Options"}</button>
 				</div>
 				{
 					doctors ?
