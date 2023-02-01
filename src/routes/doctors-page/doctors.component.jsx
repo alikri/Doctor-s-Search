@@ -57,6 +57,13 @@ const Doctors = () => {
 		setAsideFilters(prevValue => !prevValue);
 	}
 	
+	const handleCloseFiltersBtn = (e) => {
+		let target = e.target.className;
+		if (target !== "doc-list-aside-left") return;
+		setAsideFilters(false);
+		
+		
+	}
 	const doctorList = filteredDocs && filteredDocs.map(doc => <DoctorPreview
 		key={doc.id}
 		id={doc.id}
@@ -73,12 +80,12 @@ const Doctors = () => {
 		networkStatus={doc.networkStatus}
 		favoriteDoc={favoriteDoc.includes(doc.id)}
 	/>)
-	
+
 	let removePadding = isSmall && asideFilters;
 
 	return (
 		<div className="doc-list-page-container" style={{"paddingTop": removePadding && "0px"}}>
-			{asideFilters && <div className="doc-list-aside-left" >
+			{asideFilters && <div className="doc-list-aside-left" onClick={handleCloseFiltersBtn}>
 				{<AsideFilters />}
 			</div>}
 			<div className="doc-list-aside-right">
@@ -86,7 +93,7 @@ const Doctors = () => {
 					<button
 						onClick={handleSideFiltersOpenning}
 						style={{width: asideFilters && "110px"}}
-					>{asideFilters ? "Hide Filters" : "Filter Options"}</button>
+					>{!asideFilters && "Filter Options"}</button>
 				</div>
 				{
 					doctors ?

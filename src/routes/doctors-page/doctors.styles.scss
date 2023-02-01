@@ -170,7 +170,13 @@
 	}
 	@media (max-width: 1182px) {
 		.doc-list-filter-container {
-			left: 60px;
+			top: 58px;
+			left: 220px;
+
+			button {
+				font-size: 16px;
+			}
+
 		}
 
 		.doc-list-aside-left {
@@ -184,13 +190,38 @@
 			.aside {
 				box-shadow: none;
 				margin: 0;
-				
+
 				h2 {
+					border: none;
 					background-color: white;
 					padding-left: 15px;
 					margin-bottom: 0;
 					padding-block: 10px;
 				}
+			}
+		}
+	}
+
+	@media (max-width: 991px) {
+		width: fit-content;
+
+		.doc-list-filter-container {
+			
+			left: 220px;
+
+			button {
+				font-size: 16px;
+				z-index: 2000;
+			}
+
+		}
+	}
+
+	@media (max-width: 768px) {
+		.doc-list-aside-right {
+			max-width: 100vw;
+			.doc-big-container {
+				max-width: 450px;
 			}
 		}
 	}
