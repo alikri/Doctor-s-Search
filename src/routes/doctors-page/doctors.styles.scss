@@ -220,6 +220,9 @@
 	@media (max-width: 768px) {
 		.doc-list-aside-right {
 			max-width: 100vw;
+			.doc-list-page-msg {
+				margin: 0 5px;
+			}
 			.doc-big-container {
 				max-width: 450px;
 			}

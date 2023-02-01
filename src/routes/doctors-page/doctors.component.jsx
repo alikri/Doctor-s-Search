@@ -21,6 +21,7 @@ const Doctors = () => {
 	const [asideFilters, setAsideFilters] = useState(false);
 	const [width, setWidth] = useState(window.innerWidth);
 	const isSmall = width < 1462;
+	const isSmaller = width < 768;
 	
 	useEffect(() => {
 		function handleResize() {
@@ -79,6 +80,7 @@ const Doctors = () => {
 		additionalLocations={doc.additionalLocations}
 		networkStatus={doc.networkStatus}
 		favoriteDoc={favoriteDoc.includes(doc.id)}
+		isSmaller={isSmaller}
 	/>)
 
 	let removePadding = isSmall && asideFilters;

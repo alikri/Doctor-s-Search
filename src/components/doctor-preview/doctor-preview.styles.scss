@@ -198,6 +198,141 @@
 		}
 	}
 	
+
+	@media (max-width: 768px) {
+			max-width: 450px;
+			flex-wrap: wrap;
+			justify-content: center;
+
+			.doc-img-container-docp {
+				width: 400px;
+				align-items: center;
+				justify-content: center;
+				margin: 20px 0 0 0;
+				
+				img {
+					width: 70px;
+					height: 70px;
+				}
+
+				.network-container-docp {
+					img {
+						width: 20px;
+						height: 20px;
+					}
+				}
+			}
+			.doc-info-container-docp {
+				width: 400px;
+				display: flex;
+				flex-direction: column;
+				.gender-container-docp {
+					margin: 10px 10px 0 10px;
+				}
+
+				.top-border-container {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
+				.gender-container-docp {
+					.gender-bold {
+						width: 200px;
+					}
+					.language-container-docp {
+						width: 200px;
+					}
+				}
+			}
+			.doc-contact-container-docp {
+				width: 400px;
+				display: flex;
+				justify-content: space-between;
+
+				.location-container-docp {
+					margin: 0px 10px 0 10px;
+					max-width: 200px;
+					padding: 0;
+					border: none;
+				}
+				.facility-container-docp {
+					margin: 0px 10px 0 10px;
+					max-width: 200px;
+					padding: 0;
+				}
+			}
+		
+	}
+	@media (max-width: 480px) {
+		max-width: 320px;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		.doc-img-container-docp {
+			width: 300px;
+			margin: 20px 0 5px 0;
+			
+			img {
+				width: 60px;
+				height: 60px;
+			}
+
+			.network-container-docp {
+				img {
+					width: 15px;
+					height: 15px;
+				}
+			}
+		}
+		.doc-info-container-docp {
+			width: 300px;
+			display: flex;
+			flex-direction: column;
+			margin-block: 0;
+			.gender-container-docp {
+				margin: 10px 10px 0 10px;
+			}
+
+			.top-border-container {
+				h2 {
+					font-size: 18px;
+				}
+			}
+			.gender-container-docp {
+				.gender-bold {
+					width: 140px;
+				}
+				.language-container-docp {
+					width: 140px;
+				}
+			}
+		}
+		.doc-contact-container-docp {
+			margin-block: 5px;
+			width: 300px;
+			display: flex;
+			justify-content: space-between;
+			height: 90px;
+
+			.location-container-docp {
+				margin: 0px 10px 0 10px;
+				max-width: 140px;
+				padding: 0;
+				border: none;
+
+				.phone-docp {
+					margin: 0;
+				}
+			}
+			.facility-container-docp {
+				margin: 0px 10px 0 10px;
+				max-width: 140px;
+				padding: 0;
+			}
+		}
+	
+}
 	
 
 }
