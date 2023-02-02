@@ -7,6 +7,7 @@ import { ContextDoctors } from "../../context/doctors-context";
 import loop from "../../assets/icons/loop-to-search.svg";
 import AsideFilters from "../../components/aside-filters/aside-filters.component";
 import loader from "../../assets/icons/icon-spinner.gif";
+import croseClose from "../../assets/icons/cross-close.svg";
 
 const Doctors = () => {
 
@@ -60,10 +61,9 @@ const Doctors = () => {
 	
 	const handleCloseFiltersBtn = (e) => {
 		let target = e.target.className;
-		if (target !== "doc-list-aside-left") return;
-		setAsideFilters(false);
-		
-		
+		if (target === "doc-list-aside-left" || target === "filters-crose-close") {
+			setAsideFilters(false);
+		}
 	}
 	const doctorList = filteredDocs && filteredDocs.map(doc => <DoctorPreview
 		key={doc.id}
@@ -88,6 +88,9 @@ const Doctors = () => {
 	return (
 		<div className="doc-list-page-container" style={{"paddingTop": removePadding && "0px"}}>
 			{asideFilters && <div className="doc-list-aside-left" onClick={handleCloseFiltersBtn}>
+				<div onClick={handleCloseFiltersBtn} className="filters-crose-close">
+					<img className="filters-crose-close" src={croseClose} alt="" />
+				</div>
 				{<AsideFilters />}
 			</div>}
 			<div className="doc-list-aside-right">
@@ -99,7 +102,7 @@ const Doctors = () => {
 				</div>
 				{
 					doctors ?
-					<div>
+					<div className="doctors-top-header">
 						<div className="search-doc-list">
 							<input
 								onChange={handleZipcodeChange}

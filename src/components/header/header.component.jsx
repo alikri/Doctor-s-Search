@@ -27,9 +27,11 @@ const Header = () => {
 		<div className="header">
 			<div className="header-container">
 				<div className="header-left">
+				<Link to="/" style={{ textDecoration: "none", color: "white" }} >
 					<div className="logo-container">
 						<img src={docIcon} alt="" />
-					</div>
+						</div>
+					</Link>
 					<Link to="/" style={{ textDecoration: "none", color: "white" }} >
 						<h2>DocforYou</h2>
 					</Link>
