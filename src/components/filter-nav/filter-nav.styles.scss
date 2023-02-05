@@ -35,10 +35,11 @@
 		}
 
 		@media (max-width: 768px) {
-			width: 100px;
+			width: fit-content;
 			top: 100px;
 			left: 10px;
 			display: block;
+			height: 30px;
 		}
 
 		@media (max-width: 480px) {
