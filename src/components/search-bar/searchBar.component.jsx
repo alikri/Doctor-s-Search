@@ -21,7 +21,6 @@ const SearchBar = () => {
 	}
 
 	const handleZipcodeChangeMainPage = (e) => {
-		console.log(e);
 		let number = e.target.value;
 		setZipcodeMain(number);
 	}

@@ -96,10 +96,10 @@ const DoctorProfile = () => {
 		)
 
 	return (
-		<> {docToDisplay ? 
+		<div className="doc-page-big-container"> {docToDisplay ? 
 			<div className="doc-profile-container">
 			<div className="doc-profile-main-info">
-				<div className="doc-profile-underline-main-info">
+				<div className="doc-profile-underline-main-info doc-profile">
 					<div className="doc-profile-img-container">
 						<img src={docIcon} alt="" />
 					</div>
@@ -115,7 +115,7 @@ const DoctorProfile = () => {
 						<p>Dermatologist</p>
 					</div>
 				</div>
-				<div className="doc-profile-underline-adresses">
+				<div className="doc-profile-underline-adresses doc-profile">
 					<div className="doc-profile-address">
 						<h3>Main location:</h3>
 						<p>{docToDisplay.mainLocation}</p>
@@ -124,7 +124,7 @@ const DoctorProfile = () => {
 					</div>
 					{additionalLocations}	
 				</div>
-				<div className="doc-profile-underline-speciality">
+				<div className="doc-profile-underline-speciality doc-profile">
 					<div className="doc-profile-speciality">
 						<h3>Specialities:</h3>
 						<ul>
@@ -144,7 +144,7 @@ const DoctorProfile = () => {
 						</div>
 					</div>
 				</div>
-				<div className="doc-profile-underline-speciality">
+				<div className="doc-profile-underline-speciality doc-profile">
 					<div className="doc-profile-speciality">
 						<h3>Education:</h3>
 						<ul>
@@ -267,7 +267,7 @@ const DoctorProfile = () => {
 		</div>
 		: <div className="doc-profile-loader"><img src={loader} alt="" /></div> }
 		
-	</>
+	</div>
 		
 	)
 }
