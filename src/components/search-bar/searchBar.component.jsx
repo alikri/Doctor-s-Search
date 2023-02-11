@@ -7,28 +7,14 @@ const SearchBar = () => {
 	const [zipcodeMain, setZipcodeMain] = useState("");
 	const [docSearchMainPage, setDocSearchMainPage] = useState("");
 
+
 	const handleBtnClick = () => {
 		if (!zipcodeMain) {
 			alert("Zip code is required")
 		} else if (zipcodeMain.length !== 5 || isNaN(zipcodeMain)) {
-			alert("Zip code is not valid")
+			alert("Zip code is not valid. Please enter 5 digits(no space, no additional characters")
 		}
-		// fetch('https://juzz51gsf7.execute-api.eu-central-1.amazonaws.com/dev/doctorshttps://juzz51gsf7.execute-api.eu-central-1.amazonaws.com/dev/doctors', {
-		// 	method: 'POST',
-		// 	headers: {
-		// 	  'Content-Type': 'application/json'
-		// 	},
-		// 	body: JSON.stringify({
-		// 	  data: { ... }
-		// 	})
-		//   })
-		// 	.then(res => res.json())
-		// 	.then(data => {
-		// 	  console.log(data);
-		// 	})
-		// 	.catch(error => {
-		// 	  console.error(error);
-		// });
+
 	}
 
 	const inputChangeDocMainPage = (e) => {

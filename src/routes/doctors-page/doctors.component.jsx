@@ -8,6 +8,10 @@ import loop from "../../assets/icons/loop-to-search.svg";
 import AsideFilters from "../../components/aside-filters/aside-filters.component";
 import loader from "../../assets/icons/icon-spinner.gif";
 import croseClose from "../../assets/icons/cross-close.svg";
+// import Amplify from 'aws-amplify';
+// import config from '../../amplify-config';
+// Amplify.configure(config);
+import { Auth } from 'aws-amplify';
 
 const Doctors = () => {
 
@@ -15,14 +19,53 @@ const Doctors = () => {
 
 	const {favoriteDoc} = useContext(ContextFavoritedDocs);
 	const location = useLocation();
-	const { zipcodeMain, docSearchMainPage } = location.state
+	const { zipcodeMain, docSearchMainPage } = location.state;
 	const [docSearchField, setDocSearchFiel] = useState(docSearchMainPage);
 	const [filteredDocs, setFilteredDocs] = useState(doctors);
 	const [zipcode, setZipcode] = useState(zipcodeMain);
 	const [asideFilters, setAsideFilters] = useState(false);
 	const [width, setWidth] = useState(window.innerWidth);
+	const [token, setToken] = useState(null);
+	// const [response, setResponse] = useState(null);
+
+	console.log("token");
+	console.log(token);
+	// console.log(response);
+
 	const isSmall = width < 1462;
 	const isSmaller = width < 768;
+	useEffect(() => {
+		(async () => {
+		const user = await Auth.currentAuthenticatedUser();
+		const token = user.signInUserSession.accessToken.jwtToken;
+		setToken(token);
+		})();
+	}, []);
+
+	useEffect(() => {
+		(async () => {
+				fetch('https://oub1xpnh12.execute-api.eu-central-1.amazonaws.com/Prod/example/1', {
+			method: 'GET',
+			headers: {
+				'Content-Type': 'application/json',
+				'Authorization': `${token}`
+					}
+			// body: JSON.stringify(
+			// 	{
+			// 		id: '1',
+			// 		name: 'This is item 1'
+			// 	}
+			// )
+		})
+			.then(res => res.json())
+			.then(data => {
+			console.log(data);
+			})
+			.catch(error => {
+			console.error(error);
+		});
+		})();
+	}, []);
 	
 	useEffect(() => {
 		function handleResize() {
@@ -36,7 +79,7 @@ const Doctors = () => {
 	useEffect(() => {
 		const filteredSearch = doctors && doctors.filter(
 			({ name, specialization}) =>
-			  	name.toLowerCase().includes(docSearchField.toLowerCase()) ||
+			name.toLowerCase().includes(docSearchField.toLowerCase()) ||
 				specialization.toLowerCase().includes(docSearchField.toLowerCase())
 		);
 		const sortedFilteredSearch = filteredSearch && filteredSearch.sort((a,b) => a.zipcode - b.zipcode)

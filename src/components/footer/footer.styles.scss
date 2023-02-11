@@ -5,6 +5,19 @@
 	background-color: #01497C;
 	height: 70px;
 	color: white;
+
+	p {
+		a {
+			text-decoration: none;
+			font-weight: 600;
+			color: inherit;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	
+	}
 	
 
 	@media (max-width: 480px) {
