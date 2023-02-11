@@ -10,8 +10,8 @@ const UserProvider = ({ children }) => {
 		setUser(username);
 	}
 
-	// console.log("username context")
-	// console.log(user);
+	console.log("username context")
+	console.log(user);
 	return (
 		<ContextUser.Provider value={{authorized, user }} >
 			{children}

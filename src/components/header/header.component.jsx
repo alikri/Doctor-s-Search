@@ -1,6 +1,6 @@
 import "./header.styles.scss";
 import docIcon from "../../assets/icons/doc-icon.svg";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Auth } from 'aws-amplify';
 import { ContextUser } from "../../context/user.context";
 import { useEffect, useState, useContext } from "react";
@@ -9,7 +9,8 @@ import { useEffect, useState, useContext } from "react";
 const Header = () => {
 	const [currentUser, setCurrentUser] = useState(null);
 	const { user, authorized } = useContext(ContextUser);
-
+	console.log("current user from auth");
+	console.log(currentUser);
 	useEffect(() => {
 		Auth.currentSession()
 		.then((data) => setCurrentUser(data.accessToken.payload.client_id))

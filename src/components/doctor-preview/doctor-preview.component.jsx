@@ -12,9 +12,6 @@ const DoctorPreview = (props) => {
 
 	const { addFavoriteDocs } = useContext(ContextFavoritedDocs);
 	const { name, gender, specialization, hospital, zipcode, languageSpoken, ratings, networkStatus, mainLocation, id, favoriteDoc} = props;
-	
-	
-
 	const languageSpokenList = languageSpoken.map(lang => <li key={lang}>{lang}</li>);
 
 	return (

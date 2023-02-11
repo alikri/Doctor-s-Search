@@ -8,7 +8,7 @@ const DoctorsProvider = ({ children }) => {
 	
 
 	useEffect(() => {
-		fetch("https://juzz51gsf7.execute-api.eu-central-1.amazonaws.com/dev/doctors")
+		fetch("https://juzz51gsf7.execute-api.eu-central-1.amazonaws.com/Prod/doctors")
 			.then(response => response.json())
 			.then(data => setDoctors(data.results))
 			.catch(err => alert("Server issue.", err));
