@@ -98,4 +98,48 @@
 			font-weight: 600;
 		}
 	}
+
+	@media (max-width: 1182px) {
+		.top-container {
+			max-width: 100vw;
+			.telemed-container {
+				max-width: 100vw;
+
+				h3 {
+					margin: 0 30px;
+				}
+			}
+
+			.user-info-container {
+				max-width: 100vw;
+			}
+		}
+
+		.user-doc-list-header {
+			max-width: 100vw;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.top-container {
+			.user-info-container {
+				flex-direction: column;
+				align-items: center;
+				.user-img {
+					margin: 0;
+				}
+				.user-info {
+					margin: 0;
+				}
+			}
+		}
+	}
+	@media (max-width: 480px) {
+		h3 {
+			font-size: 12px;
+		}
+		.user-doc-list-header {
+			margin: 10px 0;
+		}
+	}
 }

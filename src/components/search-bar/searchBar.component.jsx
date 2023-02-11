@@ -13,6 +13,22 @@ const SearchBar = () => {
 		} else if (zipcodeMain.length !== 5 || isNaN(zipcodeMain)) {
 			alert("Zip code is not valid")
 		}
+		// fetch('https://juzz51gsf7.execute-api.eu-central-1.amazonaws.com/dev/doctorshttps://juzz51gsf7.execute-api.eu-central-1.amazonaws.com/dev/doctors', {
+		// 	method: 'POST',
+		// 	headers: {
+		// 	  'Content-Type': 'application/json'
+		// 	},
+		// 	body: JSON.stringify({
+		// 	  data: { ... }
+		// 	})
+		//   })
+		// 	.then(res => res.json())
+		// 	.then(data => {
+		// 	  console.log(data);
+		// 	})
+		// 	.catch(error => {
+		// 	  console.error(error);
+		// });
 	}
 
 	const inputChangeDocMainPage = (e) => {
