@@ -35,18 +35,38 @@
 				align-items: flex-end;
 				margin-left: 80px;
 
-				h2 {
-					padding-right: 5px;
-					color: #01497C;
-					font-weight: 600;
-					font-size: 12px;
-					cursor: pointer;
-					transition: all .2s linear;
+				.submit-btn-container {
+					display: flex;
+					justify-content: flex-end;
+					button {
+						padding-right: 5px;
+						color: #01497C;
+						font-weight: 600;
+						font-size: 12px;
+						background: none;
+						border: none;
 
-					&:hover {
-						text-decoration: underline;
+						cursor: pointer;
+						transition: all .2s linear;
+
+						&:hover {
+							text-decoration: underline;
+						}
 					}
 				}
+
+				// h2 {
+				// 	padding-right: 5px;
+				// 	color: #01497C;
+				// 	font-weight: 600;
+				// 	font-size: 12px;
+				// 	cursor: pointer;
+				// 	transition: all .2s linear;
+
+				// 	&:hover {
+				// 		text-decoration: underline;
+				// 	}
+				// }
 
 
 				.change-user-info {
